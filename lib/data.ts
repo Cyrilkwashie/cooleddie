@@ -273,10 +273,6 @@ export const placeholderPages: Record<
     title: "Track Order",
     description: "Follow your delivery anywhere in Ghana.",
   },
-  support: {
-    title: "Support",
-    description: "Real people, ready to help.",
-  },
   about: {
     title: "About Us",
     description: "Quality tech. Better prices. Always.",

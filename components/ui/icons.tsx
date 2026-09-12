@@ -357,6 +357,67 @@ export function IconCard(props: IconProps) {
   );
 }
 
+export function IconBag(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M6.5 8.5h11l.8 11.2A1.8 1.8 0 0 1 16.5 21.4h-9A1.8 1.8 0 0 1 5.7 19.7L6.5 8.5Z" />
+      <path d="M9 8.4V7.2A3 3 0 0 1 12 4.2 3 3 0 0 1 15 7.2v1.2" />
+    </Svg>
+  );
+}
+
+export function IconBox(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M4.5 8.2 12 4.6l7.5 3.6v8.6L12 20.2 4.5 16.8V8.2Z" />
+      <path d="M12 4.6v15.6M4.5 8.2 12 11.6 19.5 8.2" />
+    </Svg>
+  );
+}
+
+export function IconSettings(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <circle cx="12" cy="12" r="2.5" />
+      <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V22a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H2a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1-1.5V2a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.5 1H22a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1Z" />
+    </Svg>
+  );
+}
+
+export function IconChat(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M6 17.2 4.4 20.2 9 18.6A8 8 0 1 0 6 17.2Z" />
+    </Svg>
+  );
+}
+
+export function IconMail(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="3.5" y="6" width="17" height="12" rx="2" />
+      <path d="m4.2 7.8 7.8 6 7.8-6" />
+    </Svg>
+  );
+}
+
+export function IconCall(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M8.2 4.8h2.6l1.1 3.1-1.6 1.1a10.5 10.5 0 0 0 4.7 4.7l1.1-1.6 3.1 1.1v2.6c0 .8-.6 1.6-1.5 1.7-3.4.4-8.3-1.2-11.3-4.2S5.9 8.2 6.3 4.8c.1-.9.9-1.5 1.9-1.5Z" />
+    </Svg>
+  );
+}
+
+export function IconClock(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 8.2V12l2.8 1.8" />
+    </Svg>
+  );
+}
+
 export function IconBank(props: IconProps) {
   return (
     <Svg {...props}>

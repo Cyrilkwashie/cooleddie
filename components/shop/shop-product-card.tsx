@@ -71,11 +71,11 @@ export function ShopProductCard({ product }: { product: ShopProduct }) {
         <span className="text-[12px] text-cd-subtle">({product.reviews})</span>
       </div>
       <Link
-        href="/cart"
+        href={product.cta === "Choose Options" ? product.href : "/cart"}
         className="mt-3 inline-flex h-10 w-full items-center justify-center gap-2 rounded-[10px] bg-cd-ink text-[13px] font-medium text-white hover:bg-black"
       >
         <IconCart size={15} />
-        Add to Cart
+        {product.cta ?? "Add to Cart"}
       </Link>
     </article>
   );

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { headerBadges, isShopNavActive } from "@/lib/chrome";
 import { shopNav } from "@/lib/shop";
 import {
@@ -13,6 +13,7 @@ import {
   IconUser,
 } from "@/components/ui/icons";
 import { CategoryNav } from "@/components/layout/category-nav";
+import { StorefrontSearch } from "@/components/layout/storefront-search";
 
 function IconBadges({ wishlist = 0, cart = 0 }: { wishlist?: number; cart?: number }) {
   return (
@@ -72,7 +73,7 @@ export function Header() {
   function onSearch(e: React.FormEvent) {
     e.preventDefault();
     const q = query.trim();
-    router.push(q ? `/shop?q=${encodeURIComponent(q)}` : "/shop");
+    router.push(q ? `/search?q=${encodeURIComponent(q)}` : "/search");
     setOpen(false);
   }
 
@@ -115,19 +116,9 @@ export function Header() {
             })}
           </nav>
 
-          <form onSubmit={onSearch} className="relative mx-auto hidden w-full max-w-[420px] flex-1 md:block">
-            <IconSearch
-              size={16}
-              className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#9aa0a8]"
-            />
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search for iPhones, MacBooks, PS5, accessories..."
-              className="h-11 w-full rounded-full bg-[#f3f4f6] pl-11 pr-4 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8] focus:ring-2 focus:ring-cd-blue/20"
-            />
-          </form>
+          <Suspense fallback={<div className="mx-auto hidden h-11 w-full max-w-[420px] flex-1 md:block" />}>
+            <StorefrontSearch />
+          </Suspense>
 
           <div className="ml-auto flex items-center gap-0.5">
             <button
@@ -152,19 +143,11 @@ export function Header() {
 
         {open ? (
           <div className="border-t border-cd-line bg-white px-5 py-4 lg:hidden">
-            <form onSubmit={onSearch} className="relative mb-4 md:hidden">
-              <IconSearch
-                size={16}
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#9aa0a8]"
-              />
-              <input
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search for iPhones, MacBooks, PS5, accessories..."
-                className="h-11 w-full rounded-full bg-[#f3f4f6] pl-11 pr-4 text-[14px] outline-none"
-              />
-            </form>
+            <div className="mb-4 md:hidden">
+              <Suspense fallback={<div className="h-11" />}>
+                <StorefrontSearch mobile />
+              </Suspense>
+            </div>
             <nav className="flex flex-col gap-1">
               {shopNav.map((link) => (
                 <Link

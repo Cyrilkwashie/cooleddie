@@ -15,6 +15,7 @@ export type ShopProduct = {
   condition: "New" | "Used" | "Refurbished";
   brand: string;
   href: string;
+  cta?: "Add to Cart" | "Choose Options";
 };
 
 export const shopNav = [

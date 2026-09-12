@@ -61,7 +61,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative h-[220px] w-full overflow-hidden sm:h-[280px] lg:absolute lg:inset-0 lg:z-0 lg:h-auto">
+      <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/10] lg:absolute lg:inset-0 lg:z-0 lg:aspect-auto lg:h-auto">
         <Image
           src={officialPhotos.iphonesWide}
           alt="The latest iPhones"

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { photoClass } from "@/lib/assets";
 import type { ShopProduct } from "@/lib/shop";
 import { formatGhc } from "@/lib/shop";
 import { IconCart, IconHeart, IconStar } from "@/components/ui/icons";
@@ -31,7 +30,7 @@ export function CartRelated({ products }: { products: ShopProduct[] }) {
           const liked = saved.includes(product.id);
           return (
             <article key={product.id} className="flex flex-col">
-              <div className="relative mb-3 flex h-[140px] items-center justify-center">
+              <div className="relative mb-3 h-[140px] overflow-hidden rounded-[12px] bg-[#f4f5f7]">
                 <button
                   type="button"
                   aria-label={liked ? "Remove from wishlist" : "Add to wishlist"}
@@ -42,23 +41,19 @@ export function CartRelated({ products }: { products: ShopProduct[] }) {
                         : [...prev, product.id],
                     )
                   }
-                  className={`absolute right-0 top-0 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full ${
+                  className={`absolute right-1.5 top-1.5 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 ${
                     liked ? "text-[#f43f5e]" : "text-[#9aa0a8] hover:text-cd-ink"
                   }`}
                 >
                   <IconHeart size={18} />
                 </button>
-                <Link href={product.href} className="flex h-full w-full items-center justify-center overflow-hidden rounded-[12px]">
+                <Link href={product.href} className="absolute inset-0">
                   <Image
                     src={product.image}
                     alt={product.imageAlt}
-                    width={180}
-                    height={180}
-                    className={photoClass(
-                      product.image,
-                      "h-full w-full object-cover",
-                      "max-h-[120px] w-auto object-contain",
-                    )}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 640px) 25vw, 50vw"
                   />
                 </Link>
               </div>

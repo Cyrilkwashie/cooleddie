@@ -59,15 +59,15 @@ export function TradeInTool() {
                     active ? "border-cd-blue shadow-[0_0_0_1px_#3b6bff]" : "border-[#ececee] hover:border-[#cfd1d4]"
                   }`}
                 >
-                  <div className="mb-3 flex h-[88px] items-center justify-center overflow-hidden rounded-[12px]">
+                  <div className="relative mb-3 h-[88px] overflow-hidden rounded-[12px] bg-[#f4f5f7]">
                     {item.images.map((img) => (
                       <Image
                         key={img.src}
                         src={img.src}
                         alt={img.alt}
-                        width={180}
-                        height={88}
-                        className="h-full w-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="180px"
                       />
                     ))}
                   </div>

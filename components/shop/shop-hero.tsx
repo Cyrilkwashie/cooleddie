@@ -45,27 +45,33 @@ export function ShopHero() {
               align="right"
               arrow="down-left"
             />
-            <Image
-              src={officialPhotos.iphonesLineup}
-              alt="iPhone color lineup"
-              width={420}
-              height={236}
-              className="absolute left-[2%] top-[22%] h-[158px] w-[250px] -rotate-[8deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
-            />
-            <Image
-              src={officialPhotos.macbooks}
-              alt="MacBook Pro"
-              width={420}
-              height={236}
-              className="absolute left-[28%] top-[6%] h-[148px] w-[240px] rotate-[6deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
-            />
-            <Image
-              src={officialPhotos.ps5}
-              alt="PlayStation 5"
-              width={280}
-              height={340}
-              className="absolute bottom-0 right-[6%] h-[196px] w-[158px] rotate-[3deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
-            />
+            <div className="absolute left-[2%] top-[22%] h-[158px] w-[250px] -rotate-[8deg] overflow-hidden rounded-[18px] shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
+              <Image
+                src={officialPhotos.iphonesLineup}
+                alt="iPhone color lineup"
+                fill
+                className="object-cover"
+                sizes="250px"
+              />
+            </div>
+            <div className="absolute left-[28%] top-[6%] h-[148px] w-[240px] rotate-[6deg] overflow-hidden rounded-[18px] shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
+              <Image
+                src={officialPhotos.macbooks}
+                alt="MacBook Pro"
+                fill
+                className="object-cover"
+                sizes="240px"
+              />
+            </div>
+            <div className="absolute bottom-0 right-[6%] h-[196px] w-[158px] rotate-[3deg] overflow-hidden rounded-[18px] shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
+              <Image
+                src={officialPhotos.ps5}
+                alt="PlayStation 5"
+                fill
+                className="object-cover"
+                sizes="158px"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { photoClass } from "@/lib/assets";
 import {
   FREE_DELIVERY_THRESHOLD,
   cartRelated,
@@ -111,18 +110,14 @@ export function CartView() {
                     <div className="flex items-start gap-4">
                       <Link
                         href={line.href}
-                        className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-[12px] bg-[#f7f8fa]"
+                        className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-[12px] bg-[#f7f8fa]"
                       >
                         <Image
                           src={line.image}
                           alt={line.imageAlt}
-                          width={72}
-                          height={72}
-                          className={photoClass(
-                            line.image,
-                            "h-full w-full object-cover",
-                            "max-h-[58px] w-auto object-contain",
-                          )}
+                          fill
+                          className="object-cover"
+                          sizes="72px"
                         />
                       </Link>
                       <div className="min-w-0">

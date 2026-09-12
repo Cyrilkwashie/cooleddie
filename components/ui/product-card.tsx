@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { photoClass } from "@/lib/assets";
 import type { Product } from "@/lib/data";
 import { IconCart, IconStar } from "@/components/ui/icons";
 
@@ -28,11 +27,7 @@ export function ProductCard({ product }: { product: Product }) {
           alt={product.imageAlt}
           width={320}
           height={320}
-          className={photoClass(
-            product.image,
-            "h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]",
-            "h-[72%] w-[72%] object-contain transition-transform duration-300 group-hover:scale-[1.04]",
-          )}
+          className="h-[72%] w-[72%] object-contain transition-transform duration-300 group-hover:scale-[1.04]"
         />
       </Link>
       <Link href={product.href} className="text-[15px] font-semibold tracking-tight text-cd-ink">
@@ -51,7 +46,7 @@ export function ProductCard({ product }: { product: Product }) {
         <Link
           href="/cart"
           aria-label={`Add ${product.name} to cart`}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] border border-[#e4e4e7] text-cd-ink transition-colors hover:bg-cd-ink hover:text-white"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-[8px] border border-[#e4e4e7] text-cd-ink transition-colors hover:bg-cd-ink hover:text-white"
         >
           <IconCart size={16} />
         </Link>

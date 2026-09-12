@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 
 export function Newsletter() {
@@ -61,32 +60,32 @@ export function Newsletter() {
 
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] md:block">
             <Image
-              src={officialPhotos.accessories}
+              src="/images/png-airpods2.png"
               alt=""
-              width={220}
-              height={124}
-              className="absolute bottom-8 left-[6%] h-[92px] w-[150px] -rotate-[8deg] rounded-[14px] object-cover shadow-md"
+              width={140}
+              height={180}
+              className="absolute bottom-8 left-[8%] h-[120px] w-auto object-contain"
             />
             <Image
-              src={officialPhotos.iphones}
+              src="/images/png-iphone12-black.png"
               alt=""
-              width={260}
-              height={146}
-              className="absolute left-[26%] top-1/2 h-[120px] w-[190px] -translate-y-1/2 rotate-[8deg] rounded-[16px] object-cover shadow-md"
+              width={200}
+              height={240}
+              className="absolute left-[28%] top-1/2 h-[160px] w-auto -translate-y-1/2 rotate-[18deg] object-contain"
             />
             <Image
-              src={officialPhotos.macbooks}
+              src="/images/cutout-macbook.png"
               alt=""
               width={240}
-              height={135}
-              className="absolute bottom-6 right-6 h-[110px] w-[176px] rotate-[6deg] rounded-[16px] object-cover shadow-md"
+              height={180}
+              className="absolute bottom-6 right-6 h-[150px] w-auto rotate-[12deg] object-contain"
             />
             <Image
-              src={officialPhotos.ps5}
+              src="/images/ps5-bw.png"
               alt=""
               width={180}
-              height={220}
-              className="absolute right-6 top-6 h-[128px] w-[104px] rounded-[16px] object-cover shadow-md"
+              height={180}
+              className="absolute right-6 top-6 h-[150px] w-auto object-contain object-right-top"
             />
           </div>
         </div>

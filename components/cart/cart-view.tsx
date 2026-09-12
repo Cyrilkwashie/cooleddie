@@ -82,7 +82,7 @@ export function CartView() {
           </div>
           <Link
             href="/shop"
-            className="inline-flex h-12 w-full items-center justify-center gap-2 self-start rounded-full border border-[#e4e4e7] px-5 text-[14px] font-medium text-cd-ink hover:border-cd-ink sm:w-auto"
+            className="btn btn-outline w-full self-start sm:w-auto"
           >
             <IconArrowLeft size={16} />
             Continue Shopping
@@ -160,12 +160,12 @@ export function CartView() {
                       {formatGhc(line.price)}
                     </p>
 
-                    <div className="inline-flex h-11 items-center justify-center rounded-full border border-[#e4e4e7]">
+                    <div className="inline-flex h-12 items-center justify-center rounded-full border border-[#e4e4e7]">
                       <button
                         type="button"
                         aria-label={`Decrease ${line.name} quantity`}
                         onClick={() => setQty(line.id, line.qty - 1)}
-                        className="inline-flex h-11 w-11 items-center justify-center text-[#6b7280] hover:text-cd-ink"
+                        className="inline-flex h-12 w-12 items-center justify-center text-[#6b7280] hover:text-cd-ink"
                       >
                         <IconMinus size={14} />
                       </button>
@@ -176,7 +176,7 @@ export function CartView() {
                         type="button"
                         aria-label={`Increase ${line.name} quantity`}
                         onClick={() => setQty(line.id, line.qty + 1)}
-                        className="inline-flex h-11 w-11 items-center justify-center text-[#6b7280] hover:text-cd-ink"
+                        className="inline-flex h-12 w-12 items-center justify-center text-[#6b7280] hover:text-cd-ink"
                       >
                         <IconPlus size={14} />
                       </button>
@@ -228,7 +228,7 @@ export function CartView() {
               </div>
               <Link
                 href="/checkout"
-                className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-cd-blue text-[14px] font-semibold text-white hover:bg-cd-blue-deep"
+                className="btn btn-blue mt-5 w-full"
               >
                 <IconLock size={15} />
                 Proceed to Checkout

@@ -39,7 +39,7 @@ export function ShopNewsletter() {
               />
               <button
                 type="submit"
-                className="h-12 shrink-0 rounded-full bg-cd-blue px-6 text-[14px] font-semibold text-white hover:bg-cd-blue-deep"
+                className="btn btn-blue shrink-0"
               >
                 Subscribe
               </button>

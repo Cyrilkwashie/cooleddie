@@ -73,7 +73,7 @@ export function ShopProductCard({ product }: { product: ShopProduct }) {
         </div>
         <Link
           href={product.cta === "Choose Options" ? product.href : "/cart"}
-          className="mt-3 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-cd-ink px-4 text-[14px] font-semibold text-white hover:bg-black"
+          className="btn btn-primary mt-3 w-full"
         >
           <IconCart size={15} />
           {product.cta ?? "Add to Cart"}

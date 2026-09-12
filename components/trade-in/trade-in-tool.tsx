@@ -136,7 +136,7 @@ export function TradeInTool() {
           <button
             type="button"
             onClick={() => setQuoted(true)}
-            className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-cd-blue text-[14px] font-semibold text-white hover:bg-cd-blue-deep"
+            className="btn btn-blue mt-5 w-full"
           >
             Get Exact Quote <IconArrow size={16} />
           </button>

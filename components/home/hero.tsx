@@ -13,8 +13,20 @@ const trust = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#0c0e10] text-white">
-      <div className="container-cd relative z-10 py-10 sm:py-12 lg:flex lg:min-h-[560px] lg:items-center lg:py-16 xl:min-h-[620px]">
+    <section className="relative min-h-[560px] overflow-hidden text-white sm:min-h-[600px] lg:min-h-[560px] xl:min-h-[620px]">
+      <div className="absolute inset-0">
+        <Image
+          src={officialPhotos.iphonesWide}
+          alt="The latest iPhones"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[78%_center] lg:object-center"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0c0e10]/55 via-[#0c0e10]/35 to-[#0c0e10]/80 lg:bg-gradient-to-r lg:from-[#0c0e10]/80 lg:via-[#0c0e10]/35 lg:to-transparent" />
+      </div>
+
+      <div className="container-cd relative z-10 flex min-h-[560px] flex-col justify-center py-10 sm:min-h-[600px] sm:py-12 lg:min-h-[560px] lg:py-16 xl:min-h-[620px]">
         <div className="max-w-[560px]">
           <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.18em] text-[#c5c6c9] sm:mb-5">
             Upgrade Your World.
@@ -59,24 +71,6 @@ export function Hero() {
           align="right"
           arrow="down-left"
         />
-      </div>
-
-      <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/10] lg:absolute lg:inset-0 lg:z-0 lg:aspect-auto lg:h-auto">
-        <Image
-          src={officialPhotos.iphonesWide}
-          alt="The latest iPhones"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[72%_center] lg:object-center"
-        />
-        <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#0c0e10]/75 via-[#0c0e10]/25 to-transparent lg:block" />
-      </div>
-
-      <div className="relative z-10 flex justify-center gap-2 py-5 lg:pb-6 lg:pt-0">
-        <span className="h-1.5 w-1.5 rounded-full bg-white" />
-        <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
-        <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
       </div>
     </section>
   );

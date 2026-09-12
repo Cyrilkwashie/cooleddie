@@ -84,7 +84,7 @@ export function Newsletter() {
               alt=""
               width={180}
               height={180}
-              className="absolute right-10 top-4 h-[110px] w-auto object-contain object-top"
+              className="absolute right-6 top-6 h-[150px] w-auto object-contain object-right-top"
             />
           </div>
         </div>

@@ -31,30 +31,30 @@ export function TradeInBanner() {
             lines={["Upgrade Smarter."]}
             arrow="left"
             align="right"
-            className="absolute right-8 top-10 z-10 hidden md:block"
+            className="absolute right-10 top-8 z-10 hidden lg:block"
           />
 
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] md:block">
+          <div className="pointer-events-none absolute inset-y-0 right-6 hidden items-end gap-0 lg:flex">
             <Image
-              src="/images/png-iphone12-black.png"
+              src="/images/phone-graphite-back.png"
               alt=""
-              width={280}
-              height={360}
-              className="absolute bottom-[-8%] left-[8%] w-[38%] rotate-[-18deg] object-contain opacity-95"
+              width={200}
+              height={260}
+              className="mb-6 h-[200px] w-auto -rotate-[16deg] object-contain"
             />
             <Image
-              src="/images/cutout-iphone.png"
+              src="/images/phone-blue-back.png"
               alt="Pacific Blue iPhone"
-              width={300}
-              height={380}
-              className="absolute bottom-[-6%] left-[34%] w-[40%] rotate-[-8deg] object-contain"
+              width={220}
+              height={280}
+              className="mb-4 h-[230px] w-auto -rotate-[6deg] object-contain"
             />
             <Image
               src="/images/hero-iphone-back.png"
-              alt="Graphite iPhone"
-              width={220}
-              height={400}
-              className="absolute bottom-[-4%] right-[8%] w-[28%] rotate-[8deg] object-contain"
+              alt="Desert Titanium iPhone"
+              width={160}
+              height={320}
+              className="mb-3 h-[250px] w-auto rotate-[10deg] object-contain"
             />
           </div>
         </div>

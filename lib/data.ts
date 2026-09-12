@@ -44,7 +44,7 @@ export const gamingMenu = [
 ];
 
 export const categories = [
-  { href: "/phones", label: "iPhones", image: "/images/cutout-iphone.png" },
+  { href: "/phones", label: "iPhones", image: "/images/phone-blue-back.png" },
   { href: "/laptops", label: "MacBooks", image: "/images/mba-open.png" },
   { href: "/laptops", label: "Laptops", image: "/images/png-macbook-open.png" },
   { href: "/gaming", label: "Gaming Consoles", image: "/images/ps5-bw.png" },

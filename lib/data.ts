@@ -155,64 +155,18 @@ export const footerColumns = [
     title: "Shop",
     links: [
       { href: "/shop", label: "All Products" },
-      { href: "/phones", label: "iPhones" },
-      { href: "/laptops", label: "Laptops" },
-      { href: "/gaming", label: "Gaming Consoles" },
-      { href: "/apple", label: "Apple Gadgets" },
-      { href: "/accessories", label: "Accessories" },
-      { href: "/deals", label: "Deals" },
-    ],
-  },
-  {
-    title: "Customer Care",
-    links: [
-      { href: "/track-order", label: "Track Order" },
-      { href: "/warranty", label: "Warranty & Returns" },
-      { href: "/faq", label: "FAQ" },
-      { href: "/support", label: "Contact Support" },
-      { href: "/trade-in", label: "Sell / Trade-in" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/about", label: "About Us" },
-      { href: "/careers", label: "Careers" },
-      { href: "/terms", label: "Terms & Conditions" },
-      { href: "/privacy", label: "Privacy Policy" },
-    ],
-  },
-];
-
-export const storefrontFooterColumns = [
-  {
-    title: "Shop",
-    links: [
-      { href: "/shop", label: "All Products" },
       { href: "/shop/iphones", label: "iPhones" },
       { href: "/shop/macbooks", label: "MacBooks" },
-      { href: "/shop/gaming", label: "Gaming Consoles" },
-      { href: "/shop/accessories", label: "Accessories" },
+      { href: "/shop/gaming", label: "Gaming" },
     ],
   },
   {
-    title: "Support",
+    title: "Help",
     links: [
-      { href: "/support", label: "Help Center" },
-      { href: "/warranty", label: "Warranty & Returns" },
+      { href: "/support", label: "Support" },
+      { href: "/trade-in", label: "Sell / Trade-in" },
+      { href: "/about", label: "About" },
       { href: "/track-order", label: "Track Order" },
-      { href: "/support", label: "Contact Us" },
-      { href: "/faq", label: "FAQ" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/about", label: "About Us" },
-      { href: "/trade-in", label: "Sell/Trade-in" },
-      { href: "/careers", label: "Careers" },
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms of Service" },
     ],
   },
 ];

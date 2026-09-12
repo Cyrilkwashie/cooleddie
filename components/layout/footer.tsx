@@ -2,24 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { footerColumns, storefrontFooterColumns } from "@/lib/data";
+import { footerColumns } from "@/lib/data";
 import {
   SocialFacebook,
   SocialInstagram,
   SocialTikTok,
-  SocialX,
   SocialYouTube,
 } from "@/components/ui/icons";
 
-const homeSocials = [
-  { href: "https://instagram.com", label: "Instagram", Icon: SocialInstagram },
-  { href: "https://tiktok.com", label: "TikTok", Icon: SocialTikTok },
-  { href: "https://x.com", label: "X", Icon: SocialX },
-  { href: "https://facebook.com", label: "Facebook", Icon: SocialFacebook },
-  { href: "https://youtube.com", label: "YouTube", Icon: SocialYouTube },
-];
-
-const storefrontSocials = [
+const socials = [
   { href: "https://instagram.com", label: "Instagram", Icon: SocialInstagram },
   { href: "https://tiktok.com", label: "TikTok", Icon: SocialTikTok },
   { href: "https://facebook.com", label: "Facebook", Icon: SocialFacebook },
@@ -31,12 +22,12 @@ function NewsletterForm() {
   const [done, setDone] = useState(false);
 
   if (done) {
-    return <p className="mt-4 text-[13px] text-[#d5d6d8]">You&apos;re subscribed.</p>;
+    return <p className="mt-3 text-[13px] text-[#d5d6d8]">You&apos;re subscribed.</p>;
   }
 
   return (
     <form
-      className="mt-4 flex items-center gap-2"
+      className="mt-3 flex max-w-[320px] items-center gap-2"
       onSubmit={(e) => {
         e.preventDefault();
         if (email.trim()) setDone(true);
@@ -47,101 +38,29 @@ function NewsletterForm() {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
+        placeholder="Email address"
         className="h-12 min-w-0 flex-1 rounded-full bg-white px-4 text-[13px] text-cd-ink outline-none placeholder:text-[#9aa0a8]"
       />
-      <button
-        type="submit"
-        className="h-12 shrink-0 rounded-full bg-white px-5 text-[14px] font-semibold text-cd-ink hover:bg-[#f3f4f6]"
-      >
-        Subscribe
+      <button type="submit" className="btn btn-primary shrink-0 bg-white text-cd-ink hover:bg-[#f3f4f6]">
+        Join
       </button>
     </form>
   );
 }
 
-export function Footer({ variant = "home" }: { variant?: "home" | "storefront" }) {
-  if (variant === "storefront") {
-    return (
-      <footer className="bg-cd-black text-white">
-        <div className="container-cd grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.15fr_0.85fr_0.85fr_0.85fr_1.25fr] lg:gap-8 lg:py-14">
-          <div className="max-w-[260px]">
-            <Link
-              href="/"
-              className="font-display text-[26px] font-semibold tracking-[-0.04em]"
-            >
-              Cooleddie
-            </Link>
-            <p className="mt-3 text-[13px] leading-6 text-[#b4b6ba]">
-              Phones, Laptops, Consoles, Accessories. More.
-            </p>
-            <div className="mt-5 flex items-center gap-4 text-[#d5d6d8]">
-              {storefrontSocials.map(({ href, label, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={label}
-                  className="inline-flex h-11 w-11 items-center justify-center hover:text-white"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {storefrontFooterColumns.map((col) => (
-            <div key={col.title}>
-              <h3 className="mb-4 text-[14px] font-semibold">{col.title}</h3>
-              <ul className="space-y-2.5 text-[13.5px] text-[#c4c6ca]">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} className="hover:text-white">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          <div>
-            <h3 className="mb-2 text-[14px] font-semibold">Subscribe to newsletter</h3>
-            <p className="text-[13px] leading-5 text-[#b4b6ba]">
-              Get the latest deals and updates.
-            </p>
-            <NewsletterForm />
-          </div>
-        </div>
-
-        <div className="border-t border-white/10">
-          <div className="container-cd flex flex-col gap-2 py-5 text-[12px] text-[#9ea1a6] sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2024 Cooleddie. All rights reserved.</p>
-            <p className="sm:text-center">Buy Smart. Tech Better.</p>
-            <p>Accra, Ghana</p>
-          </div>
-        </div>
-      </footer>
-    );
-  }
-
+export function Footer() {
   return (
     <footer className="bg-cd-black text-white">
-      <div className="container-cd grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:py-16">
-        <div className="max-w-sm">
-          <Link
-            href="/"
-            className="font-display text-[28px] font-semibold tracking-[-0.04em]"
-          >
+      <div className="container-cd grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.7fr_0.7fr] lg:gap-12 lg:py-12">
+        <div className="max-w-[300px] sm:col-span-2 lg:col-span-1">
+          <Link href="/" className="font-display text-[26px] font-semibold tracking-[-0.04em]">
             Cooleddie
           </Link>
-          <p className="mt-4 max-w-[280px] text-[13.5px] leading-6 text-[#b4b6ba]">
-            Your trusted source for phones, laptops, gaming consoles and more.
-            New and used. Always genuine.
+          <p className="mt-3 text-[13.5px] leading-6 text-[#b4b6ba]">
+            Phones, laptops, consoles and accessories. New and used. Always genuine.
           </p>
-          <div className="mt-6 flex items-center gap-4 text-[#d5d6d8]">
-            {homeSocials.map(({ href, label, Icon }) => (
+          <div className="mt-4 flex items-center gap-2 text-[#d5d6d8]">
+            {socials.map(({ href, label, Icon }) => (
               <a
                 key={label}
                 href={href}
@@ -150,16 +69,18 @@ export function Footer({ variant = "home" }: { variant?: "home" | "storefront" }
                 aria-label={label}
                 className="inline-flex h-11 w-11 items-center justify-center hover:text-white"
               >
-                <Icon size={18} />
+                <Icon size={16} />
               </a>
             ))}
           </div>
+          <p className="mt-5 text-[13px] font-medium">Get deal alerts</p>
+          <NewsletterForm />
         </div>
 
         {footerColumns.map((col) => (
           <div key={col.title}>
-            <h3 className="mb-4 text-[14px] font-semibold">{col.title}</h3>
-            <ul className="space-y-2.5 text-[13.5px] text-[#c4c6ca]">
+            <h3 className="mb-3 text-[14px] font-semibold">{col.title}</h3>
+            <ul className="space-y-2 text-[13.5px] text-[#c4c6ca]">
               {col.links.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="hover:text-white">
@@ -173,12 +94,17 @@ export function Footer({ variant = "home" }: { variant?: "home" | "storefront" }
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-cd flex flex-col gap-2 py-5 text-[12px] text-[#9ea1a6] sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2024 Cooleddie. All rights reserved.</p>
-          <p>
-            Designed for a smarter tomorrow.{" "}
-            <span className="text-[#ff4d6d]">❤️</span>
-          </p>
+        <div className="container-cd flex flex-col gap-2 py-4 text-[12px] text-[#9ea1a6] sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2024 Cooleddie</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            <Link href="/privacy" className="hover:text-white">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              Terms
+            </Link>
+          </div>
+          <p>Accra, Ghana</p>
         </div>
       </div>
     </footer>

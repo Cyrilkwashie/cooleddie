@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --cd-black: #0c0e10;
+  --cd-ink: #111111;
+  --cd-body: #4b4f57;
+  --cd-muted: #6b7280;
+  --cd-subtle: #8b909a;
+  --cd-line: #ececee;
+  --cd-soft: #f4f5f7;
+  --cd-softer: #f7f8fa;
+  --cd-blue: #3b6bff;
+  --cd-blue-deep: #2a58f0;
+  --cd-beige: #f4efe6;
+  --cd-star: #f5b400;
+  --cd-green: #16a34a;
+  --cd-red: #ef4444;
+  --cd-amber: #f59e0b;
+  --cd-purple: #7c3aed;
+  --cd-header: #fafafa;
+  --radius-pill: 9999px;
+  --radius-card: 24px;
+  --radius-panel: 28px;
+  --shadow-soft: 0 10px 40px rgba(15, 18, 22, 0.06);
+}
+
+@theme inline {
+  --color-cd-black: var(--cd-black);
+  --color-cd-ink: var(--cd-ink);
+  --color-cd-body: var(--cd-body);
+  --color-cd-muted: var(--cd-muted);
+  --color-cd-subtle: var(--cd-subtle);
+  --color-cd-line: var(--cd-line);
+  --color-cd-soft: var(--cd-soft);
+  --color-cd-softer: var(--cd-softer);
+  --color-cd-blue: var(--cd-blue);
+  --color-cd-blue-deep: var(--cd-blue-deep);
+  --color-cd-beige: var(--cd-beige);
+  --color-cd-star: var(--cd-star);
+  --color-cd-green: var(--cd-green);
+  --color-cd-red: var(--cd-red);
+  --color-cd-amber: var(--cd-amber);
+  --color-cd-purple: var(--cd-purple);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
+  --font-hand: var(--font-caveat);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background: #fff;
+  color: var(--cd-ink);
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--cd-blue) 22%, white);
+  color: var(--cd-ink);
+}
+
+.container-cd {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@media (min-width: 640px) {
+  .container-cd {
+    padding-inline: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-cd {
+    padding-inline: 28px;
+  }
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-pill);
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+}
+
+.hand-note {
+  font-family: var(--font-caveat), "Caveat", cursive;
+  line-height: 1.15;
+  color: #d6d6d6;
+}

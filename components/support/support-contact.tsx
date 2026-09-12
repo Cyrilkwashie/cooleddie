@@ -41,7 +41,7 @@ export function SupportContact() {
                 href={card.href}
                 target={card.href.startsWith("http") ? "_blank" : undefined}
                 rel={card.href.startsWith("http") ? "noreferrer" : undefined}
-                className="pill h-9 shrink-0 border border-[#e4e4e7] bg-white px-3.5 text-[12.5px] text-cd-ink hover:border-cd-ink"
+                className="pill h-12 shrink-0 border border-[#e4e4e7] bg-white px-5 text-[14px] text-cd-ink hover:border-cd-ink"
               >
                 {card.action}
               </a>

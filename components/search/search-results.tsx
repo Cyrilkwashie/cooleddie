@@ -89,7 +89,7 @@ export function SearchResults() {
                   setChip(item.id);
                   setPage(1);
                 }}
-                className={`h-11 rounded-full px-3.5 text-[13px] ${
+                className={`h-12 rounded-full px-4 text-[13.5px] ${
                   active
                     ? "bg-cd-blue font-medium text-white"
                     : "border border-[#e8e9ec] bg-white text-[#3f4450] hover:border-cd-ink"
@@ -104,7 +104,7 @@ export function SearchResults() {
         <button
           type="button"
           onClick={() => setFiltersOpen(true)}
-          className="inline-flex h-11 items-center rounded-full border border-[#e5e6ea] px-4 text-[13.5px] font-medium lg:hidden"
+          className="btn btn-outline px-5 text-[13.5px] lg:hidden"
         >
           Filters
         </button>
@@ -114,7 +114,7 @@ export function SearchResults() {
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value)}
-              className="h-11 appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
+              className="h-12 appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
             >
               <option value="relevance">Relevance</option>
               <option value="price-asc">Price: Low to High</option>

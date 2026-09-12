@@ -168,7 +168,7 @@ export function ShopCatalog({ category, query = "" }: Props) {
             <button
               type="button"
               onClick={() => setFiltersOpen(true)}
-              className="inline-flex h-11 items-center rounded-full border border-[#e5e6ea] px-4 text-[13.5px] font-medium lg:hidden"
+              className="btn btn-outline px-5 text-[13.5px] lg:hidden"
             >
               Filters
             </button>
@@ -178,7 +178,7 @@ export function ShopCatalog({ category, query = "" }: Props) {
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value)}
-                  className="h-11 appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
+                  className="h-12 appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
                 >
                   <option value="featured">Featured</option>
                   <option value="price-asc">Price: Low to High</option>

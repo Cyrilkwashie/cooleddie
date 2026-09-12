@@ -90,9 +90,9 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
                 key={option.id}
                 type="button"
                 onClick={() => setStorage(option.id)}
-                className={`h-10 min-w-[84px] rounded-full px-4 text-[13px] ${
+                className={`h-12 min-w-[88px] rounded-full px-5 text-[14px] ${
                   selected
-                    ? "bg-cd-ink font-medium text-white"
+                    ? "bg-cd-ink font-semibold text-white"
                     : "border border-[#e4e4e7] bg-white text-[#3f4450] hover:border-cd-ink"
                 }`}
               >
@@ -116,7 +116,7 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
                 type="button"
                 aria-label={option.name}
                 onClick={() => setColor(option.id)}
-                className={`flex h-11 w-11 items-center justify-center rounded-full ${
+                className={`flex h-12 w-12 items-center justify-center rounded-full ${
                   selected ? "ring-1 ring-cd-ink" : ""
                 }`}
               >
@@ -140,9 +140,9 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
                 key={option.id}
                 type="button"
                 onClick={() => setCondition(option.id)}
-                className={`h-10 rounded-full px-4 text-[13px] ${
+                className={`h-12 rounded-full px-5 text-[14px] ${
                   selected
-                    ? "bg-cd-ink font-medium text-white"
+                    ? "bg-cd-ink font-semibold text-white"
                     : "border border-[#e4e4e7] bg-white text-[#3f4450] hover:border-cd-ink"
                 }`}
               >
@@ -175,7 +175,7 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
         </div>
         <Link
           href="/cart"
-          className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-cd-blue text-[14px] font-semibold text-white hover:bg-cd-blue-deep"
+          className="btn btn-blue flex-1"
         >
           <IconCart size={16} />
           Add to Cart
@@ -186,10 +186,10 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
         <button
           type="button"
           onClick={() => setSaved((v) => !v)}
-          className={`inline-flex h-12 items-center justify-center gap-2 rounded-full border text-[14px] font-medium ${
+          className={`btn ${
             saved
-              ? "border-[#fecdd3] bg-[#fff1f2] text-[#e11d48]"
-              : "border-[#e4e4e7] text-cd-ink hover:border-cd-ink"
+              ? "border border-[#fecdd3] bg-[#fff1f2] text-[#e11d48]"
+              : "btn-outline"
           }`}
         >
           <IconHeart size={16} />
@@ -197,7 +197,7 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
         </button>
         <Link
           href="/checkout"
-          className="inline-flex h-12 items-center justify-center rounded-full bg-cd-ink text-[14px] font-semibold text-white hover:bg-black"
+          className="btn btn-primary"
         >
           Buy Now
         </Link>

@@ -71,7 +71,7 @@ export function CartRelated({ products }: { products: ShopProduct[] }) {
               </div>
               <Link
                 href="/cart"
-                className="mt-3 inline-flex h-10 w-full items-center justify-center gap-2 rounded-[10px] bg-cd-ink text-[13px] font-medium text-white hover:bg-black"
+                className="btn btn-primary mt-3 w-full"
               >
                 <IconCart size={15} />
                 Add to Cart

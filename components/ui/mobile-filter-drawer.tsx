@@ -59,7 +59,7 @@ export function MobileFilterDrawer({
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-12 w-full items-center justify-center rounded-full bg-cd-ink text-[14px] font-semibold text-white"
+            className="btn btn-primary w-full"
           >
             Show results
           </button>

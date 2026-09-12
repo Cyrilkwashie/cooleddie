@@ -78,12 +78,12 @@ export function CheckoutSummary() {
               value={promo}
               onChange={(e) => setPromo(e.target.value)}
               placeholder="Enter promo code"
-              className="h-11 w-full rounded-full border border-[#e8e9ec] bg-white pl-8 pr-4 text-[13px] outline-none placeholder:text-[#9aa0a8] focus:border-cd-blue"
+              className="h-12 w-full rounded-full border border-[#e8e9ec] bg-white pl-8 pr-4 text-[13px] outline-none placeholder:text-[#9aa0a8] focus:border-cd-blue"
             />
           </div>
           <button
             type="submit"
-            className="h-11 shrink-0 rounded-full bg-cd-ink px-5 text-[13px] font-semibold text-white hover:bg-black"
+            className="h-12 shrink-0 rounded-full bg-cd-ink px-5 text-[14px] font-semibold text-white hover:bg-black"
           >
             Apply
           </button>

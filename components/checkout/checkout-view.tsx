@@ -298,7 +298,7 @@ export function CheckoutView() {
               <button
                 type="button"
                 onClick={() => setPlaced(true)}
-                className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-cd-blue text-[14px] font-semibold text-white hover:bg-cd-blue-deep"
+                className="btn btn-blue mt-5 w-full"
               >
                 <IconLock size={15} />
                 Place Order – {formatGhc(totals.total)}

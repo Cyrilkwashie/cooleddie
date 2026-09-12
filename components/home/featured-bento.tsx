@@ -27,7 +27,7 @@ export function FeaturedBento() {
             </p>
             <Link
               href="/shop/macbooks"
-              className="pill mt-6 h-12 w-full bg-white px-5 text-[13.5px] text-cd-ink sm:mt-7 sm:h-11 sm:w-fit"
+              className="pill mt-6 h-12 w-full bg-white px-5 text-[14px] text-cd-ink sm:mt-7 sm:w-fit"
             >
               Shop MacBooks <IconArrow size={15} />
             </Link>
@@ -50,7 +50,7 @@ export function FeaturedBento() {
             <p className="mt-2 text-[13.5px] text-cd-muted">PS5 Consoles & Games</p>
             <Link
               href="/shop/gaming"
-              className="pill mt-5 h-11 w-full bg-cd-ink px-4 text-[13px] text-white sm:h-10 sm:w-fit"
+              className="pill mt-5 h-12 w-full bg-cd-ink px-5 text-[14px] text-white sm:w-fit"
             >
               Shop Gaming <IconArrow size={14} />
             </Link>
@@ -77,7 +77,7 @@ export function FeaturedBento() {
             </p>
             <Link
               href="/apple"
-              className="pill mt-5 h-11 w-full bg-cd-ink px-4 text-[13px] text-white sm:h-10 sm:w-fit"
+              className="pill mt-5 h-12 w-full bg-cd-ink px-5 text-[14px] text-white sm:w-fit"
             >
               Shop Apple <IconArrow size={14} />
             </Link>

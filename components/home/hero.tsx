@@ -20,9 +20,9 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[62%_center]"
+        className="object-cover object-center"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0c0e10] via-[#0c0e10]/55 to-transparent sm:via-[#0c0e10]/35 lg:via-[#0c0e10]/15" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0c0e10]/70 via-transparent to-transparent sm:from-[#0c0e10]/40" />
 
       <div className="container-cd relative z-10 flex min-h-[420px] items-center py-12 sm:min-h-[500px] lg:min-h-[560px] lg:py-16 xl:min-h-[620px]">
         <div className="max-w-[560px]">

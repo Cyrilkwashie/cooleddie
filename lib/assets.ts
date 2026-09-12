@@ -1,6 +1,7 @@
 export const officialPhotos = {
   ps5: "/images/ps5-hero.png",
   iphones: "/images/iphones-hero.png",
+  iphonesWide: "/images/iphones-hero-wide.png",
   iphonesLineup: "/images/iphones-lineup.png",
   macbooks: "/images/macbooks-hero.png",
   ipad: "/images/ipad-hero.png",

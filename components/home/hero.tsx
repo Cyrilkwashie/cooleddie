@@ -14,9 +14,18 @@ const trust = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#0c0e10] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_48%,rgba(90,90,90,0.26),transparent_56%)]" />
-      <div className="container-cd relative grid items-center gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-6 lg:py-14 xl:py-16">
-        <div className="max-w-[580px]">
+      <Image
+        src={officialPhotos.iphonesWide}
+        alt="The latest iPhones"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[62%_center]"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0c0e10] via-[#0c0e10]/55 to-transparent sm:via-[#0c0e10]/35 lg:via-[#0c0e10]/15" />
+
+      <div className="container-cd relative z-10 flex min-h-[420px] items-center py-12 sm:min-h-[500px] lg:min-h-[560px] lg:py-16 xl:min-h-[620px]">
+        <div className="max-w-[560px]">
           <p className="mb-5 text-[12px] font-medium uppercase tracking-[0.18em] text-[#c5c6c9]">
             Upgrade Your World.
           </p>
@@ -54,24 +63,15 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative mx-auto min-h-[320px] w-full max-w-[560px] overflow-hidden rounded-[22px] sm:min-h-[400px] lg:min-h-[440px]">
-          <HandwrittenNote
-            lines={["More than a Phone.", "A Lifestyle."]}
-            className="absolute right-4 top-4 z-20 hidden sm:block"
-            align="right"
-            arrow="down-left"
-          />
-          <Image
-            src={officialPhotos.iphones}
-            alt="The latest iPhones"
-            fill
-            priority
-            sizes="(min-width: 1024px) 560px, 90vw"
-            className="object-cover object-[center_42%]"
-          />
-        </div>
+        <HandwrittenNote
+          lines={["More than a Phone.", "A Lifestyle."]}
+          className="absolute right-0 top-10 z-20 hidden lg:block"
+          align="right"
+          arrow="down-left"
+        />
       </div>
-      <div className="flex justify-center gap-2 pb-6">
+
+      <div className="relative z-10 flex justify-center gap-2 pb-6">
         <span className="h-1.5 w-1.5 rounded-full bg-white" />
         <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
         <span className="h-1.5 w-1.5 rounded-full bg-white/30" />

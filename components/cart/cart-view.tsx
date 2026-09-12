@@ -82,7 +82,7 @@ export function CartView() {
           </div>
           <Link
             href="/shop"
-            className="inline-flex h-12 w-full items-center justify-center gap-2 self-start rounded-full border border-[#e4e4e7] px-5 text-[14px] font-medium text-cd-ink hover:border-cd-ink sm:h-11 sm:w-auto"
+            className="inline-flex h-12 w-full items-center justify-center gap-2 self-start rounded-full border border-[#e4e4e7] px-5 text-[14px] font-medium text-cd-ink hover:border-cd-ink sm:w-auto"
           >
             <IconArrowLeft size={16} />
             Continue Shopping
@@ -272,11 +272,11 @@ export function CartView() {
                       value={promo}
                       onChange={(e) => setPromo(e.target.value)}
                       placeholder="Enter code"
-                      className="h-10 min-w-0 flex-1 rounded-full bg-[#f3f4f6] px-4 text-[13px] outline-none"
+                      className="h-12 min-w-0 flex-1 rounded-full bg-[#f3f4f6] px-4 text-[13px] outline-none"
                     />
                     <button
                       type="submit"
-                      className="h-10 rounded-full bg-cd-ink px-4 text-[13px] font-medium text-white"
+                      className="h-12 rounded-full bg-cd-ink px-5 text-[14px] font-medium text-white"
                     >
                       Apply
                     </button>

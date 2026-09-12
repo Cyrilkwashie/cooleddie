@@ -27,16 +27,64 @@ export const shopNav = [
 ] as const;
 
 export const shopCategories = [
-  { slug: "all", label: "All Products", icon: "grid", href: "/shop" },
-  { slug: "iphones", label: "iPhones", icon: "phone", href: "/shop/iphones" },
-  { slug: "macbooks", label: "MacBooks", icon: "laptop", href: "/shop/macbooks" },
-  { slug: "ipads", label: "iPads", icon: "tablet", href: "/shop/ipads" },
-  { slug: "apple-watch", label: "Apple Watch", icon: "watch", href: "/shop/apple-watch" },
-  { slug: "airpods", label: "AirPods", icon: "earbuds", href: "/shop/airpods" },
-  { slug: "gaming", label: "Gaming Consoles", icon: "gamepad", href: "/shop/gaming" },
-  { slug: "accessories", label: "Accessories", icon: "headphone", href: "/shop/accessories" },
-  { slug: "used", label: "Used Devices", icon: "tag", href: "/shop/used" },
-  { slug: "deals", label: "Deals", icon: "percent", href: "/shop/deals" },
+  { slug: "all", label: "All Products", icon: "grid", href: "/shop", image: null },
+  {
+    slug: "iphones",
+    label: "iPhones",
+    icon: "phone",
+    href: "/shop/iphones",
+    image: "/images/iphones-lineup.png",
+  },
+  {
+    slug: "macbooks",
+    label: "MacBooks",
+    icon: "laptop",
+    href: "/shop/macbooks",
+    image: "/images/macbooks-hero.png",
+  },
+  {
+    slug: "ipads",
+    label: "iPads",
+    icon: "tablet",
+    href: "/shop/ipads",
+    image: "/images/ipad-hero.png",
+  },
+  {
+    slug: "apple-watch",
+    label: "Apple Watch",
+    icon: "watch",
+    href: "/shop/apple-watch",
+    image: "/images/accessories-hero.png",
+  },
+  {
+    slug: "airpods",
+    label: "AirPods",
+    icon: "earbuds",
+    href: "/shop/airpods",
+    image: "/images/accessories-hero.png",
+  },
+  {
+    slug: "gaming",
+    label: "Gaming Consoles",
+    icon: "gamepad",
+    href: "/shop/gaming",
+    image: "/images/ps5-hero.png",
+  },
+  {
+    slug: "accessories",
+    label: "Accessories",
+    icon: "headphone",
+    href: "/shop/accessories",
+    image: "/images/accessories-hero.png",
+  },
+  {
+    slug: "used",
+    label: "Used Devices",
+    icon: "tag",
+    href: "/shop/used",
+    image: "/images/iphones-hero.png",
+  },
+  { slug: "deals", label: "Deals", icon: "percent", href: "/shop/deals", image: null },
 ] as const;
 
 export const filterCategories = [

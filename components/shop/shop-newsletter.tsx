@@ -35,11 +35,11 @@ export function ShopNewsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="h-12 min-w-0 flex-1 rounded-full px-4 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8] sm:h-11"
+                className="h-12 min-w-0 flex-1 rounded-full px-4 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8]"
               />
               <button
                 type="submit"
-                className="h-12 shrink-0 rounded-full bg-cd-blue px-5 text-[13.5px] font-semibold text-white hover:bg-cd-blue-deep sm:h-11"
+                className="h-12 shrink-0 rounded-full bg-cd-blue px-6 text-[14px] font-semibold text-white hover:bg-cd-blue-deep"
               >
                 Subscribe
               </button>

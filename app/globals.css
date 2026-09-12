@@ -88,6 +88,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  min-height: 48px;
+  padding-inline: 24px;
   border-radius: var(--radius-pill);
   font-weight: 550;
   letter-spacing: -0.01em;

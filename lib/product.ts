@@ -361,6 +361,20 @@ const extraShopLike: ShopProduct[] = [
     brand: "Apple",
     href: "/products/iphone-15",
   },
+  {
+    id: "magic-keyboard",
+    name: "Magic Keyboard",
+    specs: "For iPad • New",
+    price: 1200,
+    rating: 4.8,
+    reviews: 36,
+    image: "/images/magic-keyboard.png",
+    imageAlt: "Magic Keyboard for iPad",
+    category: "accessories",
+    condition: "New",
+    brand: "Apple",
+    href: "/products/magic-keyboard",
+  },
 ];
 
 export function getProductDetail(slug: string): ProductDetail | undefined {

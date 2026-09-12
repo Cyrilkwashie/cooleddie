@@ -22,6 +22,7 @@ const homeSocials = [
 const storefrontSocials = [
   { href: "https://instagram.com", label: "Instagram", Icon: SocialInstagram },
   { href: "https://tiktok.com", label: "TikTok", Icon: SocialTikTok },
+  { href: "https://facebook.com", label: "Facebook", Icon: SocialFacebook },
   { href: "https://youtube.com", label: "YouTube", Icon: SocialYouTube },
 ];
 
@@ -51,7 +52,7 @@ function NewsletterForm() {
       />
       <button
         type="submit"
-        className="h-10 shrink-0 rounded-full bg-[#111] px-4 text-[13px] font-semibold text-white ring-1 ring-white/20 hover:bg-black"
+        className="h-10 shrink-0 rounded-full bg-white px-4 text-[13px] font-semibold text-cd-ink hover:bg-[#f3f4f6]"
       >
         Subscribe
       </button>

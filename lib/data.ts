@@ -199,6 +199,7 @@ export const storefrontFooterColumns = [
     title: "Support",
     links: [
       { href: "/support", label: "Help Center" },
+      { href: "/warranty", label: "Warranty & Returns" },
       { href: "/track-order", label: "Track Order" },
       { href: "/support", label: "Contact Us" },
       { href: "/faq", label: "FAQ" },
@@ -209,6 +210,7 @@ export const storefrontFooterColumns = [
     links: [
       { href: "/about", label: "About Us" },
       { href: "/trade-in", label: "Sell/Trade-in" },
+      { href: "/careers", label: "Careers" },
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Service" },
     ],

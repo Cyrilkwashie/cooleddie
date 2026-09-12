@@ -31,13 +31,13 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              href="/phones"
+              href="/shop/iphones"
               className="pill h-12 bg-white px-6 text-[14px] text-cd-ink hover:bg-[#f3f3f3]"
             >
               Shop iPhones <IconArrow size={16} />
             </Link>
             <Link
-              href="/products"
+              href="/shop"
               className="pill h-12 border border-white/35 bg-transparent px-6 text-[14px] text-white hover:border-white/70"
             >
               Explore All Products

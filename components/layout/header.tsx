@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { shopNav } from "@/lib/shop";
 import {
   IconClose,
   IconHeart,
@@ -12,16 +13,172 @@ import {
 } from "@/components/ui/icons";
 import { CategoryNav } from "@/components/layout/category-nav";
 
+function IconBadges({ wishlist = 0, cart = 0 }: { wishlist?: number; cart?: number }) {
+  return (
+    <>
+      <Link
+        href="/account"
+        aria-label="Account"
+        className="hidden h-10 w-10 items-center justify-center rounded-full text-cd-ink hover:bg-cd-soft sm:inline-flex"
+      >
+        <IconUser size={22} />
+      </Link>
+      <Link
+        href="/wishlist"
+        aria-label="Wishlist"
+        className="relative hidden h-10 w-10 items-center justify-center rounded-full text-cd-ink hover:bg-cd-soft sm:inline-flex"
+      >
+        <IconHeart size={22} />
+        <span className="absolute right-1 top-1 flex h-[15px] min-w-[15px] items-center justify-center rounded-full bg-cd-blue px-1 text-[9px] font-bold leading-none text-white">
+          {wishlist}
+        </span>
+      </Link>
+      <Link
+        href="/cart"
+        aria-label="Cart"
+        className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-cd-ink hover:bg-cd-soft"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="9" cy="20" r="1.15" fill="currentColor" stroke="none" />
+          <circle cx="17" cy="20" r="1.15" fill="currentColor" stroke="none" />
+          <path d="M3.5 5h2.1l1.55 11.2h11.1l1.7-8.2H7" />
+        </svg>
+        <span className="absolute right-1 top-1 flex h-[15px] min-w-[15px] items-center justify-center rounded-full bg-cd-blue px-1 text-[9px] font-bold leading-none text-white">
+          {cart}
+        </span>
+      </Link>
+    </>
+  );
+}
+
 export function Header() {
+  const pathname = usePathname();
   const router = useRouter();
+  const isHome = pathname === "/";
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
 
   function onSearch(e: React.FormEvent) {
     e.preventDefault();
     const q = query.trim();
-    router.push(q ? `/products?q=${encodeURIComponent(q)}` : "/products");
+    router.push(q ? `/shop?q=${encodeURIComponent(q)}` : "/shop");
     setOpen(false);
+  }
+
+  const shopActive = pathname === "/shop" || pathname.startsWith("/shop/");
+
+  if (!isHome) {
+    return (
+      <header className="border-b border-[#f0f1f3] bg-white">
+        <div className="container-cd flex h-[72px] items-center gap-5 lg:h-[78px] lg:gap-8">
+          <Link
+            href="/"
+            className="shrink-0 font-display text-[26px] font-semibold tracking-[-0.04em] text-cd-ink md:text-[28px]"
+          >
+            Cooleddie
+          </Link>
+
+          <nav className="hidden items-center gap-5 text-[14px] text-[#3f4450] lg:flex">
+            {shopNav.map((link) => {
+              const active =
+                link.href === "/shop"
+                  ? shopActive
+                  : link.href === "/"
+                    ? pathname === "/"
+                    : pathname === link.href;
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`relative py-2 ${
+                    active ? "font-semibold text-cd-ink" : "hover:text-cd-ink"
+                  }`}
+                >
+                  {link.label}
+                  {active ? (
+                    <span className="absolute inset-x-0 -bottom-0.5 h-[2px] rounded-full bg-cd-blue" />
+                  ) : null}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <form onSubmit={onSearch} className="relative mx-auto hidden w-full max-w-[420px] flex-1 md:block">
+            <IconSearch
+              size={16}
+              className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#9aa0a8]"
+            />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search for iPhones, MacBooks, PS5, accessories..."
+              className="h-11 w-full rounded-full bg-[#f3f4f6] pl-11 pr-4 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8] focus:ring-2 focus:ring-cd-blue/20"
+            />
+          </form>
+
+          <div className="ml-auto flex items-center gap-0.5">
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full md:hidden"
+              aria-label="Search"
+              onClick={() => setOpen(true)}
+            >
+              <IconSearch size={22} />
+            </button>
+            <IconBadges wishlist={0} cart={0} />
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full lg:hidden"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <IconClose size={22} /> : <IconMenu size={22} />}
+            </button>
+          </div>
+        </div>
+
+        {open ? (
+          <div className="border-t border-cd-line bg-white px-5 py-4 lg:hidden">
+            <form onSubmit={onSearch} className="relative mb-4 md:hidden">
+              <IconSearch
+                size={16}
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#9aa0a8]"
+              />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search for iPhones, MacBooks, PS5, accessories..."
+                className="h-11 w-full rounded-full bg-[#f3f4f6] pl-11 pr-4 text-[14px] outline-none"
+              />
+            </form>
+            <nav className="flex flex-col gap-1">
+              {shopNav.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl px-2 py-2.5 text-[15px] font-medium hover:bg-cd-soft"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        ) : null}
+      </header>
+    );
   }
 
   return (
@@ -60,34 +217,7 @@ export function Header() {
           >
             <IconSearch size={22} />
           </button>
-          <Link
-            href="/account"
-            aria-label="Account"
-            className="hidden h-10 w-10 items-center justify-center rounded-full text-cd-ink hover:bg-cd-soft sm:inline-flex"
-          >
-            <IconUser size={22} />
-          </Link>
-          <Link
-            href="/wishlist"
-            aria-label="Wishlist"
-            className="hidden h-10 w-10 items-center justify-center rounded-full text-cd-ink hover:bg-cd-soft sm:inline-flex"
-          >
-            <IconHeart size={22} />
-          </Link>
-          <Link
-            href="/cart"
-            aria-label="Cart"
-            className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-cd-ink hover:bg-cd-soft"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="9" cy="20" r="1.15" fill="currentColor" stroke="none" />
-              <circle cx="17" cy="20" r="1.15" fill="currentColor" stroke="none" />
-              <path d="M3.5 5h2.1l1.55 11.2h11.1l1.7-8.2H7" />
-            </svg>
-            <span className="absolute right-1 top-1 flex h-[15px] min-w-[15px] items-center justify-center rounded-full bg-cd-blue px-1 text-[9px] font-bold leading-none text-white">
-              0
-            </span>
-          </Link>
+          <IconBadges wishlist={0} cart={0} />
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full text-cd-ink lg:hidden"

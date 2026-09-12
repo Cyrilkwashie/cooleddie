@@ -17,7 +17,7 @@ export function BestSellers() {
             </h2>
           </div>
           <Link
-            href="/products"
+            href="/shop"
             className="hidden items-center gap-1 text-[14px] font-medium text-cd-ink hover:opacity-70 sm:inline-flex"
           >
             View All Products <IconArrow size={15} />
@@ -29,7 +29,7 @@ export function BestSellers() {
           ))}
         </div>
         <div className="mt-6 sm:hidden">
-          <Link href="/products" className="text-[14px] font-medium">
+          <Link href="/shop" className="text-[14px] font-medium">
             View All Products →
           </Link>
         </div>

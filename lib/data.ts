@@ -16,7 +16,7 @@ export type Product = {
 };
 
 export const navLinks = [
-  { href: "/products", label: "All Products", hasMenu: true, icon: "menu" },
+  { href: "/shop", label: "All Products", hasMenu: true, icon: "menu" },
   { href: "/phones", label: "Phones" },
   { href: "/laptops", label: "Laptops" },
   { href: "/gaming", label: "Gaming", hasMenu: true },
@@ -44,17 +44,17 @@ export const gamingMenu = [
 ];
 
 export const categories = [
-  { href: "/phones", label: "iPhones", image: "/images/phone-blue-back.png" },
-  { href: "/laptops", label: "MacBooks", image: "/images/mba-open.png" },
+  { href: "/shop/iphones", label: "iPhones", image: "/images/phone-blue-back.png" },
+  { href: "/shop/macbooks", label: "MacBooks", image: "/images/mba-open.png" },
   { href: "/laptops", label: "Laptops", image: "/images/png-macbook-open.png" },
-  { href: "/gaming", label: "Gaming Consoles", image: "/images/ps5-bw.png" },
+  { href: "/shop/gaming", label: "Gaming Consoles", image: "/images/ps5-bw.png" },
   { href: "/apple", label: "Apple Gadgets", image: "/images/cutout-airpods.png" },
   {
-    href: "/accessories",
+    href: "/shop/accessories",
     label: "Accessories",
     image: "/images/png-headphones.png",
   },
-  { href: "/deals", label: "Deals", image: null, icon: "percent" },
+  { href: "/shop/deals", label: "Deals", image: null, icon: "percent" },
 ];
 
 export const bestSellers: Product[] = [
@@ -154,7 +154,7 @@ export const footerColumns = [
   {
     title: "Shop",
     links: [
-      { href: "/products", label: "All Products" },
+      { href: "/shop", label: "All Products" },
       { href: "/phones", label: "iPhones" },
       { href: "/laptops", label: "Laptops" },
       { href: "/gaming", label: "Gaming Consoles" },

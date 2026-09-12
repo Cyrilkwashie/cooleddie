@@ -29,6 +29,8 @@ npm start
 | Path | Status |
 | --- | --- |
 | `/` | Homepage (all marketing sections) |
+| `/shop` | Shop / all products (filters + 12-card grid) |
+| `/shop/[category]` | Category views (`iphones`, `macbooks`, `ipads`, `apple-watch`, `airpods`, `gaming`, `accessories`, `used`, `deals`) |
 | `/products`, `/phones`, `/laptops`, `/gaming`, `/apple`, `/accessories`, `/new-arrivals`, `/deals`, `/trade-in` | Placeholder catalog pages |
 | `/account`, `/wishlist`, `/cart`, `/track-order`, `/support`, `/about`, `/careers`, `/faq`, `/warranty`, `/privacy`, `/terms` | Placeholder utility pages |
 
@@ -57,4 +59,11 @@ Tokens live in `app/globals.css` as CSS variables and Tailwind theme colors (`bg
 - **Product cards** — status tag, image well, “From GHS” price, stars, square cart button
 - **Handwritten notes** — `HandwrittenNote` (Caveat + SVG arrows) on hero, trade-in, and newsletter
 
-Shared chrome (top bar, header, category nav, footer) is in `components/layout` via `SiteShell`. Homepage sections are in `components/home`. Add future pages under `app/` and they inherit the same shell automatically.
+Shared chrome is in `components/layout` via `SiteShell`. The **homepage** keeps the original marketing header + category nav. **Shop and later storefront pages** switch to the shop chrome from the catalog mock:
+
+- Top bar: free delivery over GHC500 + Buy Smart. Tech Better.
+- Header: Home / Shop / Sell/Trade-in / About / Support, left-icon search pill, wishlist + cart badges
+- Shop cards: GHC prices, sale strikethrough, full-width Add to Cart
+- Shop newsletter: dark bar with blue Subscribe
+
+Homepage sections live in `components/home`. Shop lives in `components/shop` + `lib/shop.ts`.

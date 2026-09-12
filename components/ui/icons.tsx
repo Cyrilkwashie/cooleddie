@@ -208,6 +208,91 @@ export function IconClose(props: IconProps) {
   );
 }
 
+export function IconGrid(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="4" y="4" width="6.5" height="6.5" rx="1.2" />
+      <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.2" />
+      <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.2" />
+      <rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.2" />
+    </Svg>
+  );
+}
+
+export function IconPhone(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="8" y="3.5" width="8" height="17" rx="2" />
+      <path d="M11 18.2h2" />
+    </Svg>
+  );
+}
+
+export function IconLaptop(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="4" y="5" width="16" height="10.5" rx="1.6" />
+      <path d="M3 17.5h18" />
+    </Svg>
+  );
+}
+
+export function IconTablet(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="6.5" y="3.5" width="11" height="17" rx="2" />
+    </Svg>
+  );
+}
+
+export function IconWatch(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="8" y="7" width="8" height="10" rx="2" />
+      <path d="M10 7V4.5h4V7M10 17v2.5h4V17" />
+    </Svg>
+  );
+}
+
+export function IconEarbuds(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M8 9a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8v7" />
+      <path d="M16 9a2.4 2.4 0 1 0 0-4.8A2.4 2.4 0 0 0 16 9v7" />
+    </Svg>
+  );
+}
+
+export function IconGamepad(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M7 9h10a4 4 0 0 1 3.6 5.8l-.6 1.2A2.4 2.4 0 0 1 17.8 17H6.2a2.4 2.4 0 0 1-2.2-1.1l-.6-1.1A4 4 0 0 1 7 9Z" />
+      <path d="M8.5 13h3M10 11.5v3" />
+      <circle cx="15.5" cy="12.2" r="0.7" fill="currentColor" stroke="none" />
+      <circle cx="17.2" cy="13.8" r="0.7" fill="currentColor" stroke="none" />
+    </Svg>
+  );
+}
+
+export function IconHeadphone(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M5 13.5V12a7 7 0 0 1 14 0v1.5" />
+      <rect x="3.8" y="13" width="3.6" height="5.5" rx="1.2" />
+      <rect x="16.6" y="13" width="3.6" height="5.5" rx="1.2" />
+    </Svg>
+  );
+}
+
+export function IconCard(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="3.5" y="6" width="17" height="12" rx="2" />
+      <path d="M3.5 10h17" />
+    </Svg>
+  );
+}
+
 export function GhanaFlag({ className }: { className?: string }) {
   return (
     <svg

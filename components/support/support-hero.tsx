@@ -34,7 +34,7 @@ export function SupportHero() {
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#9aa0a8]">
             Help & Support
           </p>
-          <h1 className="mt-3 font-display text-[40px] font-semibold leading-[1.05] tracking-[-0.045em] text-cd-ink sm:text-[52px] lg:text-[56px]">
+          <h1 className="mt-3 font-display text-[32px] font-semibold leading-[1.08] tracking-[-0.045em] text-cd-ink sm:text-[44px] lg:text-[56px] lg:leading-[1.05]">
             We&apos;re Here for <span className="text-cd-blue">You</span>.
           </h1>
           <p className="mt-4 max-w-[440px] text-[15px] leading-7 text-[#5c616a]">
@@ -52,7 +52,7 @@ export function SupportHero() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search for help (e.g. returns, warranty, delivery...)"
-              className="h-12 w-full rounded-full bg-[#f3f4f6] pl-11 pr-4 text-[14px] text-cd-ink outline-none placeholder:text-[#9aa0a8] focus:ring-2 focus:ring-cd-blue/20"
+              className="h-12 w-full rounded-full bg-[#f3f4f6] pl-11 pr-4 text-[14px] text-cd-ink outline-none placeholder:text-[#9aa0a8] focus:ring-2 focus:ring-cd-blue/20 sm:h-12"
             />
           </form>
 
@@ -68,7 +68,7 @@ export function SupportHero() {
                     behavior: "smooth",
                   });
                 }}
-                className="rounded-full bg-[#f3f4f6] px-3 py-1.5 text-[12.5px] text-[#4b4f57] hover:bg-[#ebecef]"
+                className="min-h-11 rounded-full bg-[#f3f4f6] px-3 py-2 text-[12.5px] text-[#4b4f57] hover:bg-[#ebecef]"
               >
                 {term}
               </button>
@@ -90,7 +90,7 @@ export function SupportHero() {
             width={864}
             height={1152}
             priority
-            className="relative z-10 mx-auto h-[340px] w-auto object-contain object-bottom sm:h-[420px] lg:h-[460px]"
+            className="relative z-10 mx-auto h-[260px] w-auto max-w-full object-contain object-bottom sm:h-[420px] lg:h-[460px]"
           />
 
           <div className="absolute right-0 top-[14%] z-20 hidden w-[230px] rounded-[18px] bg-white p-4 shadow-[0_16px_48px_rgba(15,18,22,0.10)] lg:block">

@@ -48,11 +48,11 @@ function NewsletterForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
-        className="h-10 min-w-0 flex-1 rounded-full bg-white px-4 text-[13px] text-cd-ink outline-none placeholder:text-[#9aa0a8]"
+        className="h-11 min-w-0 flex-1 rounded-full bg-white px-4 text-[13px] text-cd-ink outline-none placeholder:text-[#9aa0a8]"
       />
       <button
         type="submit"
-        className="h-10 shrink-0 rounded-full bg-white px-4 text-[13px] font-semibold text-cd-ink hover:bg-[#f3f4f6]"
+        className="h-11 shrink-0 rounded-full bg-white px-4 text-[13px] font-semibold text-cd-ink hover:bg-[#f3f4f6]"
       >
         Subscribe
       </button>
@@ -83,7 +83,7 @@ export function Footer({ variant = "home" }: { variant?: "home" | "storefront" }
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="hover:text-white"
+                  className="inline-flex h-11 w-11 items-center justify-center hover:text-white"
                 >
                   <Icon size={16} />
                 </a>
@@ -148,7 +148,7 @@ export function Footer({ variant = "home" }: { variant?: "home" | "storefront" }
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
-                className="hover:text-white"
+                className="inline-flex h-11 w-11 items-center justify-center hover:text-white"
               >
                 <Icon size={18} />
               </a>

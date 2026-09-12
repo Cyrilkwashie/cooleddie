@@ -13,7 +13,7 @@ export function TradeInBanner() {
             <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#c5c6c9]">
               Sell or Trade-in
             </p>
-            <h2 className="mt-3 font-display text-[34px] font-semibold leading-[1.1] tracking-[-0.035em] md:text-[44px]">
+            <h2 className="mt-3 font-display text-[28px] font-semibold leading-[1.1] tracking-[-0.035em] sm:text-[34px] md:text-[44px]">
               Your Old Devices
             </h2>
             <p className="mt-4 max-w-[360px] text-[14.5px] leading-6 text-[#c2c3c7]">

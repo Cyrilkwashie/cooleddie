@@ -21,7 +21,7 @@ export function CategoryNav({
             key={link.label}
             href={link.href}
             onClick={onNavigate}
-            className="rounded-xl px-2 py-2.5 text-[15px] font-medium text-cd-ink hover:bg-cd-soft"
+            className="flex min-h-11 items-center rounded-xl px-2 text-[15px] font-medium text-cd-ink hover:bg-cd-soft"
           >
             {link.label}
           </Link>

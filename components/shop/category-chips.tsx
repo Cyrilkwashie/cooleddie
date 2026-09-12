@@ -38,7 +38,7 @@ export function CategoryChips({ active }: { active: string }) {
             <Link
               key={cat.slug}
               href={cat.href}
-              className={`flex min-w-[76px] flex-col items-center gap-2 rounded-[18px] px-2 py-2 text-center ${
+              className={`flex min-h-[88px] min-w-[76px] flex-col items-center justify-center gap-2 rounded-[18px] px-2 py-2 text-center ${
                 isActive ? "border border-cd-blue bg-[#f4f7ff]" : ""
               }`}
             >

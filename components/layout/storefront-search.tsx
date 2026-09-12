@@ -37,7 +37,7 @@ export function StorefrontSearch({ mobile = false }: { mobile?: boolean }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search for iPhones, MacBooks, PS5, accessories..."
-        className={`h-11 w-full rounded-full bg-[#f3f4f6] pl-11 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8] focus:ring-2 focus:ring-cd-blue/20 ${
+        className={`h-12 w-full rounded-full bg-[#f3f4f6] pl-11 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8] focus:ring-2 focus:ring-cd-blue/20 md:h-11 ${
           query ? "pr-10" : "pr-4"
         }`}
       />

@@ -14,7 +14,7 @@ export function Newsletter() {
       <div className="container-cd">
         <div className="relative overflow-hidden rounded-[28px] bg-[#f4f5f7] px-6 py-10 md:px-12 md:py-14">
           <div className="relative z-10 max-w-[420px]">
-            <h2 className="font-display text-[32px] font-semibold tracking-[-0.035em] text-cd-ink md:text-[40px]">
+            <h2 className="font-display text-[28px] font-semibold tracking-[-0.035em] text-cd-ink sm:text-[32px] md:text-[40px]">
               Stay in the Loop
             </h2>
             <p className="mt-3 text-[14.5px] leading-6 text-cd-muted">
@@ -43,7 +43,7 @@ export function Newsletter() {
                 />
                 <button
                   type="submit"
-                  className="pill h-12 bg-cd-ink px-6 text-[14px] text-white"
+                  className="pill h-12 w-full bg-cd-ink px-6 text-[14px] text-white sm:w-auto"
                 >
                   Subscribe
                 </button>

@@ -19,7 +19,7 @@ export function SearchHero({ query }: { query: string }) {
 
         <div className="relative z-10 max-w-[420px]">
           <p className="text-[12px] font-medium text-[#8b909a]">Search Results</p>
-          <h1 className="mt-2 font-display text-[32px] font-semibold leading-[1.1] tracking-[-0.035em] text-cd-ink md:text-[40px]">
+          <h1 className="mt-2 break-words font-display text-[26px] font-semibold leading-[1.15] tracking-[-0.035em] text-cd-ink sm:text-[32px] md:text-[40px]">
             Results for &lsquo;{term}&rsquo;
           </h1>
           <p className="mt-3 text-[14px] text-[#6b7280]">

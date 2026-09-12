@@ -74,7 +74,7 @@ export function CartView() {
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#9aa0a8]">
               Your Cart
             </p>
-            <h1 className="mt-2 font-display text-[36px] font-semibold tracking-[-0.04em] text-cd-ink md:text-[44px]">
+            <h1 className="mt-2 font-display text-[28px] font-semibold tracking-[-0.04em] text-cd-ink sm:text-[36px] md:text-[44px]">
               Your Cart
             </h1>
             <p className="mt-2 text-[14px] text-[#6b7280]">
@@ -83,7 +83,7 @@ export function CartView() {
           </div>
           <Link
             href="/shop"
-            className="inline-flex h-11 items-center justify-center gap-2 self-start rounded-full border border-[#e4e4e7] px-5 text-[14px] font-medium text-cd-ink hover:border-cd-ink"
+            className="inline-flex h-12 w-full items-center justify-center gap-2 self-start rounded-full border border-[#e4e4e7] px-5 text-[14px] font-medium text-cd-ink hover:border-cd-ink sm:h-11 sm:w-auto"
           >
             <IconArrowLeft size={16} />
             Continue Shopping
@@ -165,12 +165,12 @@ export function CartView() {
                       {formatGhc(line.price)}
                     </p>
 
-                    <div className="inline-flex h-10 items-center justify-center rounded-full border border-[#e4e4e7]">
+                    <div className="inline-flex h-11 items-center justify-center rounded-full border border-[#e4e4e7]">
                       <button
                         type="button"
                         aria-label={`Decrease ${line.name} quantity`}
                         onClick={() => setQty(line.id, line.qty - 1)}
-                        className="inline-flex h-10 w-10 items-center justify-center text-[#6b7280] hover:text-cd-ink"
+                        className="inline-flex h-11 w-11 items-center justify-center text-[#6b7280] hover:text-cd-ink"
                       >
                         <IconMinus size={14} />
                       </button>
@@ -181,7 +181,7 @@ export function CartView() {
                         type="button"
                         aria-label={`Increase ${line.name} quantity`}
                         onClick={() => setQty(line.id, line.qty + 1)}
-                        className="inline-flex h-10 w-10 items-center justify-center text-[#6b7280] hover:text-cd-ink"
+                        className="inline-flex h-11 w-11 items-center justify-center text-[#6b7280] hover:text-cd-ink"
                       >
                         <IconPlus size={14} />
                       </button>

@@ -42,21 +42,21 @@ export function CheckoutView() {
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#9aa0a8]">
             Checkout
           </p>
-          <h1 className="mt-2 font-display text-[36px] font-semibold tracking-[-0.04em] text-cd-ink md:text-[44px]">
+          <h1 className="mt-2 font-display text-[28px] font-semibold tracking-[-0.04em] text-cd-ink sm:text-[36px] md:text-[44px]">
             Complete Your Order
           </h1>
           <p className="mt-2 text-[14px] text-[#6b7280]">
             Secure checkout. Fast delivery. Happy tech life.
           </p>
         </div>
-        <ol className="flex items-start gap-0 sm:min-w-[420px]">
+        <ol className="flex w-full max-w-full items-start gap-0 lg:max-w-[420px]">
           {checkoutSteps.map((step, i) => {
             const active = step.id === 1;
             return (
               <li key={step.id} className="flex flex-1 items-start">
                 <div className="flex min-w-0 flex-col items-center text-center">
                   <span
-                    className={`flex h-8 w-8 items-center justify-center rounded-full text-[13px] font-semibold ${
+                    className={`flex h-11 w-11 items-center justify-center rounded-full text-[13px] font-semibold ${
                       active
                         ? "bg-cd-blue text-white"
                         : "border border-[#e4e4e7] bg-white text-[#8b909a]"
@@ -65,7 +65,7 @@ export function CheckoutView() {
                     {step.id}
                   </span>
                   <span
-                    className={`mt-2 max-w-[110px] text-[12.5px] leading-4 ${
+                      className={`mt-2 max-w-[90px] text-[11px] leading-4 sm:max-w-[110px] sm:text-[12.5px] ${
                       active ? "font-medium text-cd-ink" : "text-[#8b909a]"
                     }`}
                   >
@@ -73,7 +73,7 @@ export function CheckoutView() {
                   </span>
                 </div>
                 {i < checkoutSteps.length - 1 ? (
-                  <span className="mt-4 h-px flex-1 bg-[#e8e9ec]" />
+                  <span className="mt-5 h-px min-w-2 flex-1 bg-[#e8e9ec]" />
                 ) : null}
               </li>
             );

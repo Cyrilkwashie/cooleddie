@@ -23,7 +23,7 @@ export function ShopNewsletter() {
             <p className="text-[14px] font-medium">You&apos;re subscribed.</p>
           ) : (
             <form
-              className="flex w-full max-w-[460px] items-center gap-0 rounded-full bg-white p-1"
+              className="flex w-full max-w-[460px] flex-col gap-2 rounded-[22px] bg-white p-1 sm:flex-row sm:items-center sm:gap-0 sm:rounded-full"
               onSubmit={(e) => {
                 e.preventDefault();
                 if (email.trim()) setDone(true);
@@ -35,11 +35,11 @@ export function ShopNewsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="h-11 min-w-0 flex-1 rounded-full px-4 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8]"
+                className="h-12 min-w-0 flex-1 rounded-full px-4 text-[13.5px] text-cd-ink outline-none placeholder:text-[#9aa0a8] sm:h-11"
               />
               <button
                 type="submit"
-                className="h-11 shrink-0 rounded-full bg-cd-blue px-5 text-[13.5px] font-semibold text-white hover:bg-cd-blue-deep"
+                className="h-12 shrink-0 rounded-full bg-cd-blue px-5 text-[13.5px] font-semibold text-white hover:bg-cd-blue-deep sm:h-11"
               >
                 Subscribe
               </button>

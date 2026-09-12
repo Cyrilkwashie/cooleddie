@@ -43,7 +43,7 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
         <p className="text-[11.5px] text-[#9aa0a8]">SKU: {sku}</p>
       </div>
 
-      <h1 className="mt-3 font-display text-[30px] font-semibold leading-[1.15] tracking-[-0.035em] text-cd-ink md:text-[34px]">
+      <h1 className="mt-3 font-display text-[26px] font-semibold leading-[1.15] tracking-[-0.035em] text-cd-ink sm:text-[30px] md:text-[34px]">
         {product.name}
       </h1>
       <p className="mt-2 text-[14px] text-[#6b7280]">{product.tagline}</p>
@@ -116,7 +116,7 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
                 type="button"
                 aria-label={option.name}
                 onClick={() => setColor(option.id)}
-                className={`flex h-[26px] w-[26px] items-center justify-center rounded-full ${
+                className={`flex h-11 w-11 items-center justify-center rounded-full ${
                   selected ? "ring-1 ring-cd-ink" : ""
                 }`}
               >
@@ -203,7 +203,7 @@ export function ProductInfo({ product }: { product: ProductDetail }) {
         </Link>
       </div>
 
-      <div className="mt-6 grid grid-cols-3 gap-2 border-t border-[#f0f1f3] pt-5">
+      <div className="mt-6 grid grid-cols-1 gap-3 border-t border-[#f0f1f3] pt-5 sm:grid-cols-3 sm:gap-2">
         <div className="flex items-start gap-2">
           <IconTruck size={18} className="mt-0.5 shrink-0 text-[#6b7280]" />
           <div>

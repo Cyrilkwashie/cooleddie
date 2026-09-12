@@ -20,7 +20,7 @@ export function ShopHero() {
             <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#c5c6c9]">
               Shop All Products
             </p>
-            <h1 className="mt-3 font-display text-[36px] font-semibold leading-[1.06] tracking-[-0.04em] sm:text-[48px]">
+            <h1 className="mt-3 font-display text-[28px] font-semibold leading-[1.1] tracking-[-0.04em] sm:text-[40px] lg:text-[48px] lg:leading-[1.06]">
               The Tech You Love,
               <br />
               <span className="text-cd-blue">All in One Place.</span>

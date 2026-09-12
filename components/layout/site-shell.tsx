@@ -10,7 +10,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isHome = usePathname() === "/";
 
   return (
-    <div className="flex min-h-full flex-col bg-white">
+    <div className="flex min-h-full flex-col overflow-x-clip bg-white">
       <TopBar />
       <Header />
       {isHome ? <CategoryNav /> : null}

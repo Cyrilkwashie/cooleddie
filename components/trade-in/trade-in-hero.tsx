@@ -17,7 +17,7 @@ export function TradeInHero() {
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#9aa0a8]">
             Sell or Trade-in
           </p>
-          <h1 className="mt-3 font-display text-[36px] font-semibold leading-[1.08] tracking-[-0.04em] text-cd-ink sm:text-[48px] lg:text-[52px]">
+          <h1 className="mt-3 font-display text-[28px] font-semibold leading-[1.12] tracking-[-0.04em] text-cd-ink sm:text-[40px] lg:text-[52px] lg:leading-[1.08]">
             Upgrade <span className="text-cd-blue">Smarter</span>.
             <br />
             Give Tech a <span className="text-cd-blue">Second Life</span>.
@@ -39,16 +39,16 @@ export function TradeInHero() {
               </li>
             ))}
           </ul>
-          <div className="mt-7 flex flex-wrap items-center gap-3">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href="#trade-in-tool"
-              className="pill h-12 bg-cd-blue px-6 text-[14px] text-white hover:bg-cd-blue-deep"
+              className="pill h-12 w-full bg-cd-blue px-6 text-[14px] text-white hover:bg-cd-blue-deep sm:w-auto"
             >
               Get Started <IconArrow size={16} />
             </a>
             <a
               href="#how-it-works"
-              className="pill h-12 border border-[#e4e4e7] bg-white px-6 text-[14px] text-cd-ink hover:border-cd-ink"
+              className="pill h-12 w-full border border-[#e4e4e7] bg-white px-6 text-[14px] text-cd-ink hover:border-cd-ink sm:w-auto"
             >
               <IconPlayCircle size={16} />
               How It Works
@@ -56,7 +56,7 @@ export function TradeInHero() {
           </div>
         </div>
 
-        <div className="relative min-h-[340px] sm:min-h-[420px]">
+        <div className="relative min-h-[280px] overflow-hidden sm:min-h-[420px]">
           <HandwrittenNote
             lines={["Old Tech.", "New Possibilities."]}
             className="absolute left-0 top-0 z-20 hidden md:block"

@@ -16,7 +16,7 @@ export function WhyChoose() {
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#9aa0a8]">
             Why Choose Cooleddie
           </p>
-          <h2 className="mt-3 font-display text-[34px] font-semibold leading-[1.12] tracking-[-0.04em] text-cd-ink md:text-[44px]">
+          <h2 className="mt-3 font-display text-[28px] font-semibold leading-[1.12] tracking-[-0.04em] text-cd-ink sm:text-[34px] md:text-[44px]">
             More Than a Store.
             <br />
             <span className="text-cd-blue">A Better Tech Experience</span>

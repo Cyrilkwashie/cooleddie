@@ -48,6 +48,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -55,6 +56,7 @@ body {
   color: var(--cd-ink);
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -66,7 +68,13 @@ body {
   width: 100%;
   max-width: 1180px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 16px;
+}
+
+@media (min-width: 640px) {
+  .container-cd {
+    padding-inline: 20px;
+  }
 }
 
 @media (min-width: 768px) {

@@ -12,6 +12,7 @@ import {
   type ShopProduct,
 } from "@/lib/shop";
 import { ShopProductCard } from "@/components/shop/shop-product-card";
+import { MobileFilterDrawer } from "@/components/ui/mobile-filter-drawer";
 import { IconChevron } from "@/components/ui/icons";
 
 type Props = {
@@ -25,6 +26,7 @@ export function ShopCatalog({ category, query = "" }: Props) {
   const [brands, setBrands] = useState<string[]>([]);
   const [maxPrice, setMaxPrice] = useState(50000);
   const [sort, setSort] = useState("featured");
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   function toggle(list: string[], value: string, set: (v: string[]) => void) {
     set(list.includes(value) ? list.filter((x) => x !== value) : [...list, value]);
@@ -72,20 +74,18 @@ export function ShopCatalog({ category, query = "" }: Props) {
     !query &&
     category === "all";
 
-  return (
-    <section className="container-cd pb-10">
-      <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)]">
-        <aside>
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-[16px] font-semibold">Filters</h2>
-            <button
-              type="button"
-              onClick={clearAll}
-              className="text-[13px] text-cd-muted hover:text-cd-ink"
-            >
-              Clear all
-            </button>
-          </div>
+  const filterPanel = (
+    <>
+      <div className="mb-4 hidden items-center justify-between lg:flex">
+        <h2 className="text-[16px] font-semibold">Filters</h2>
+        <button
+          type="button"
+          onClick={clearAll}
+          className="text-[13px] text-cd-muted hover:text-cd-ink"
+        >
+          Clear all
+        </button>
+      </div>
 
           <FilterGroup title="Category">
             {filterCategories.map((item) => (
@@ -135,12 +135,26 @@ export function ShopCatalog({ category, query = "" }: Props) {
               />
             ))}
           </FilterGroup>
-        </aside>
+    </>
+  );
+
+  return (
+    <section className="container-cd pb-10">
+      <MobileFilterDrawer
+        open={filtersOpen}
+        onClose={() => setFiltersOpen(false)}
+        onClear={clearAll}
+      >
+        {filterPanel}
+      </MobileFilterDrawer>
+
+      <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)]">
+        <aside className="hidden lg:block">{filterPanel}</aside>
 
         <div>
           <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
             <div>
-              <h2 className="font-display text-[28px] font-semibold tracking-[-0.03em]">
+              <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] sm:text-[28px]">
                 {shopCategories.find((c) => c.slug === category)?.label ??
                   "All Products"}
               </h2>
@@ -150,13 +164,21 @@ export function ShopCatalog({ category, query = "" }: Props) {
                   : `Showing ${showing} of ${SHOP_CATALOG_SIZE} products`}
               </p>
             </div>
-            <label className="inline-flex items-center gap-2 text-[13.5px] text-cd-ink">
+            <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
+            <button
+              type="button"
+              onClick={() => setFiltersOpen(true)}
+              className="inline-flex h-11 items-center rounded-full border border-[#e5e6ea] px-4 text-[13.5px] font-medium lg:hidden"
+            >
+              Filters
+            </button>
+            <label className="inline-flex min-h-11 items-center gap-2 text-[13.5px] text-cd-ink">
               Sort by
               <span className="relative">
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value)}
-                  className="appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
+                  className="h-11 appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
                 >
                   <option value="featured">Featured</option>
                   <option value="price-asc">Price: Low to High</option>
@@ -169,6 +191,7 @@ export function ShopCatalog({ category, query = "" }: Props) {
                 />
               </span>
             </label>
+            </div>
           </div>
 
           {filtered.length === 0 ? (
@@ -176,7 +199,7 @@ export function ShopCatalog({ category, query = "" }: Props) {
               No products match those filters.
             </p>
           ) : (
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {filtered.map((product) => (
                 <ShopProductCard key={product.id} product={product} />
               ))}
@@ -213,12 +236,12 @@ function CheckRow({
   onChange: () => void;
 }) {
   return (
-    <label className="flex cursor-pointer items-center gap-2 text-[13px] text-[#4b5060]">
+    <label className="flex min-h-11 cursor-pointer items-center gap-2 text-[13px] text-[#4b5060]">
       <input
         type="checkbox"
         checked={checked}
         onChange={onChange}
-        className="h-3.5 w-3.5 rounded border-[#c5c8ce] accent-cd-ink"
+        className="h-4 w-4 rounded border-[#c5c8ce] accent-cd-ink"
       />
       {label}
     </label>

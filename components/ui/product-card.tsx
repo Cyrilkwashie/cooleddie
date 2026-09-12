@@ -51,7 +51,7 @@ export function ProductCard({ product }: { product: Product }) {
         <Link
           href="/cart"
           aria-label={`Add ${product.name} to cart`}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-[8px] border border-[#e4e4e7] text-cd-ink transition-colors hover:bg-cd-ink hover:text-white"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-[8px] border border-[#e4e4e7] text-cd-ink transition-colors hover:bg-cd-ink hover:text-white"
         >
           <IconCart size={16} />
         </Link>

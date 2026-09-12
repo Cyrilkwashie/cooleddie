@@ -36,7 +36,7 @@ export function ProductTabs({ product }: { product: ProductDetail }) {
               key={item.id}
               type="button"
               onClick={() => setTab(item.id)}
-              className={`relative shrink-0 pb-3 ${
+              className={`relative min-h-11 shrink-0 pb-3 ${
                 active ? "font-semibold text-cd-blue" : "text-[#6b7280] hover:text-cd-ink"
               }`}
             >

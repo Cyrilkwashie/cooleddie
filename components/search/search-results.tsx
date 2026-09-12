@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import { ShopProductCard } from "@/components/shop/shop-product-card";
+import { MobileFilterDrawer } from "@/components/ui/mobile-filter-drawer";
 import { formatGhc } from "@/lib/shop";
 import {
   SEARCH_RESULT_COUNT,
@@ -27,6 +28,7 @@ export function SearchResults() {
   const [maxPrice, setMaxPrice] = useState(50000);
   const [sort, setSort] = useState("relevance");
   const [page, setPage] = useState(1);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   function toggle(list: string[], value: string, set: (v: string[]) => void) {
     set(list.includes(value) ? list.filter((x) => x !== value) : [...list, value]);
@@ -76,7 +78,7 @@ export function SearchResults() {
   return (
     <section className="container-cd py-6 md:py-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-[#f0f1f3] pb-4">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex w-full flex-wrap gap-2 lg:w-auto">
           {searchChips.map((item) => {
             const active = chip === item.id;
             return (
@@ -87,7 +89,7 @@ export function SearchResults() {
                   setChip(item.id);
                   setPage(1);
                 }}
-                className={`h-9 rounded-full px-3.5 text-[13px] ${
+                className={`h-11 rounded-full px-3.5 text-[13px] ${
                   active
                     ? "bg-cd-blue font-medium text-white"
                     : "border border-[#e8e9ec] bg-white text-[#3f4450] hover:border-cd-ink"
@@ -98,13 +100,21 @@ export function SearchResults() {
             );
           })}
         </div>
-        <label className="inline-flex items-center gap-2 text-[13.5px] text-cd-ink">
+        <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
+        <button
+          type="button"
+          onClick={() => setFiltersOpen(true)}
+          className="inline-flex h-11 items-center rounded-full border border-[#e5e6ea] px-4 text-[13.5px] font-medium lg:hidden"
+        >
+          Filters
+        </button>
+        <label className="inline-flex min-h-11 items-center gap-2 text-[13.5px] text-cd-ink">
           Sort by
           <span className="relative">
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value)}
-              className="appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
+              className="h-11 appearance-none rounded-full border border-[#e5e6ea] bg-white py-2 pl-3 pr-8 text-[13.5px] outline-none"
             >
               <option value="relevance">Relevance</option>
               <option value="price-asc">Price: Low to High</option>
@@ -117,111 +127,58 @@ export function SearchResults() {
             />
           </span>
         </label>
+        </div>
       </div>
 
+      <MobileFilterDrawer
+        open={filtersOpen}
+        onClose={() => setFiltersOpen(false)}
+        onClear={clearAll}
+      >
+        <SearchFilters
+          cats={cats}
+          setCats={setCats}
+          models={models}
+          setModels={setModels}
+          conditions={conditions}
+          setConditions={setConditions}
+          storage={storage}
+          setStorage={setStorage}
+          colors={colors}
+          setColors={setColors}
+          brands={brands}
+          setBrands={setBrands}
+          maxPrice={maxPrice}
+          setMaxPrice={setMaxPrice}
+          toggle={toggle}
+        />
+      </MobileFilterDrawer>
+
       <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)]">
-        <aside>
+        <aside className="hidden lg:block">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-[16px] font-semibold">Filters</h2>
             <button type="button" onClick={clearAll} className="text-[13px] text-cd-muted hover:text-cd-ink">
               Clear all
             </button>
           </div>
-
-          <FilterGroup title="Category">
-            {searchCategories.map((item) => (
-              <CheckRow
-                key={item.id}
-                label={`${item.label} (${item.count})`}
-                checked={cats.includes(item.id)}
-                onChange={() => toggle(cats, item.id, setCats)}
-              />
-            ))}
-          </FilterGroup>
-
-          <FilterGroup title="Model">
-            {searchModels.map((item) => (
-              <CheckRow
-                key={item.id}
-                label={`${item.label} (${item.count})`}
-                checked={models.includes(item.id)}
-                onChange={() => toggle(models, item.id, setModels)}
-              />
-            ))}
-          </FilterGroup>
-
-          <FilterGroup title="Condition">
-            {searchConditions.map((item) => (
-              <CheckRow
-                key={item.id}
-                label={`${item.label} (${item.count})`}
-                checked={conditions.includes(item.id)}
-                onChange={() => toggle(conditions, item.id, setConditions)}
-              />
-            ))}
-          </FilterGroup>
-
-          <FilterGroup title="Price Range (GHC)">
-            <input
-              type="range"
-              min={0}
-              max={50000}
-              step={100}
-              value={maxPrice}
-              onChange={(e) => setMaxPrice(Number(e.target.value))}
-              className="mt-2 w-full accent-cd-ink"
-            />
-            <div className="mt-1 flex justify-between text-[12px] text-cd-subtle">
-              <span>0</span>
-              <span>{maxPrice >= 50000 ? "50,000+" : formatGhc(maxPrice)}</span>
-            </div>
-          </FilterGroup>
-
-          <FilterGroup title="Storage">
-            {searchStorage.map((item) => (
-              <CheckRow
-                key={item.id}
-                label={`${item.label} (${item.count})`}
-                checked={storage.includes(item.id)}
-                onChange={() => toggle(storage, item.id, setStorage)}
-              />
-            ))}
-          </FilterGroup>
-
-          <FilterGroup title="Color">
-            <div className="flex flex-wrap gap-2 pt-1">
-              {searchColors.map((c) => {
-                const selected = colors.includes(c.id);
-                return (
-                  <button
-                    key={c.id}
-                    type="button"
-                    aria-label={c.label}
-                    onClick={() => toggle(colors, c.id, setColors)}
-                    className={`flex h-[26px] w-[26px] items-center justify-center rounded-full ${
-                      selected ? "ring-1 ring-cd-ink" : ""
-                    }`}
-                  >
-                    <span
-                      className="h-[18px] w-[18px] rounded-full border border-black/10"
-                      style={{ backgroundColor: c.hex }}
-                    />
-                  </button>
-                );
-              })}
-            </div>
-          </FilterGroup>
-
-          <FilterGroup title="Brand">
-            {searchBrands.map((item) => (
-              <CheckRow
-                key={item.id}
-                label={`${item.label} (${item.count})`}
-                checked={brands.includes(item.id)}
-                onChange={() => toggle(brands, item.id, setBrands)}
-              />
-            ))}
-          </FilterGroup>
+          <SearchFilters
+            cats={cats}
+            setCats={setCats}
+            models={models}
+            setModels={setModels}
+            conditions={conditions}
+            setConditions={setConditions}
+            storage={storage}
+            setStorage={setStorage}
+            colors={colors}
+            setColors={setColors}
+            brands={brands}
+            setBrands={setBrands}
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice}
+            toggle={toggle}
+          />
         </aside>
 
         <div>
@@ -230,7 +187,7 @@ export function SearchResults() {
               No products match those filters.
             </p>
           ) : (
-            <div className="grid grid-cols-2 gap-4 xl:grid-cols-4 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {filtered.map((product) => (
                 <ShopProductCard key={product.id} product={product} />
               ))}
@@ -246,7 +203,7 @@ export function SearchResults() {
                 type="button"
                 aria-label="Previous page"
                 onClick={() => setPage((n) => Math.max(1, n - 1))}
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-[#8b909a] hover:bg-cd-soft"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full text-[#8b909a] hover:bg-cd-soft"
               >
                 ‹
               </button>
@@ -255,7 +212,7 @@ export function SearchResults() {
                   key={n}
                   type="button"
                   onClick={() => setPage(n)}
-                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-[13px] ${
+                  className={`inline-flex h-11 w-11 items-center justify-center rounded-full text-[13px] ${
                     page === n ? "bg-cd-blue font-semibold text-white" : "text-[#3f4450] hover:bg-cd-soft"
                   }`}
                 >
@@ -266,7 +223,7 @@ export function SearchResults() {
                 type="button"
                 aria-label="Next page"
                 onClick={() => setPage((n) => Math.min(5, n + 1))}
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-[#8b909a] hover:bg-cd-soft"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full text-[#8b909a] hover:bg-cd-soft"
               >
                 ›
               </button>
@@ -275,6 +232,135 @@ export function SearchResults() {
         </div>
       </div>
     </section>
+  );
+}
+
+type FilterToggle = (list: string[], value: string, set: (v: string[]) => void) => void;
+
+function SearchFilters({
+  cats,
+  setCats,
+  models,
+  setModels,
+  conditions,
+  setConditions,
+  storage,
+  setStorage,
+  colors,
+  setColors,
+  brands,
+  setBrands,
+  maxPrice,
+  setMaxPrice,
+  toggle,
+}: {
+  cats: string[];
+  setCats: (v: string[]) => void;
+  models: string[];
+  setModels: (v: string[]) => void;
+  conditions: string[];
+  setConditions: (v: string[]) => void;
+  storage: string[];
+  setStorage: (v: string[]) => void;
+  colors: string[];
+  setColors: (v: string[]) => void;
+  brands: string[];
+  setBrands: (v: string[]) => void;
+  maxPrice: number;
+  setMaxPrice: (v: number) => void;
+  toggle: FilterToggle;
+}) {
+  return (
+    <>
+      <FilterGroup title="Category">
+        {searchCategories.map((item) => (
+          <CheckRow
+            key={item.id}
+            label={`${item.label} (${item.count})`}
+            checked={cats.includes(item.id)}
+            onChange={() => toggle(cats, item.id, setCats)}
+          />
+        ))}
+      </FilterGroup>
+      <FilterGroup title="Model">
+        {searchModels.map((item) => (
+          <CheckRow
+            key={item.id}
+            label={`${item.label} (${item.count})`}
+            checked={models.includes(item.id)}
+            onChange={() => toggle(models, item.id, setModels)}
+          />
+        ))}
+      </FilterGroup>
+      <FilterGroup title="Condition">
+        {searchConditions.map((item) => (
+          <CheckRow
+            key={item.id}
+            label={`${item.label} (${item.count})`}
+            checked={conditions.includes(item.id)}
+            onChange={() => toggle(conditions, item.id, setConditions)}
+          />
+        ))}
+      </FilterGroup>
+      <FilterGroup title="Price Range (GHC)">
+        <input
+          type="range"
+          min={0}
+          max={50000}
+          step={100}
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(Number(e.target.value))}
+          className="mt-2 w-full accent-cd-ink"
+        />
+        <div className="mt-1 flex justify-between text-[12px] text-cd-subtle">
+          <span>0</span>
+          <span>{maxPrice >= 50000 ? "50,000+" : formatGhc(maxPrice)}</span>
+        </div>
+      </FilterGroup>
+      <FilterGroup title="Storage">
+        {searchStorage.map((item) => (
+          <CheckRow
+            key={item.id}
+            label={`${item.label} (${item.count})`}
+            checked={storage.includes(item.id)}
+            onChange={() => toggle(storage, item.id, setStorage)}
+          />
+        ))}
+      </FilterGroup>
+      <FilterGroup title="Color">
+        <div className="flex flex-wrap gap-2 pt-1">
+          {searchColors.map((c) => {
+            const selected = colors.includes(c.id);
+            return (
+              <button
+                key={c.id}
+                type="button"
+                aria-label={c.label}
+                onClick={() => toggle(colors, c.id, setColors)}
+                className={`flex h-11 w-11 items-center justify-center rounded-full ${
+                  selected ? "ring-1 ring-cd-ink" : ""
+                }`}
+              >
+                <span
+                  className="h-[18px] w-[18px] rounded-full border border-black/10"
+                  style={{ backgroundColor: c.hex }}
+                />
+              </button>
+            );
+          })}
+        </div>
+      </FilterGroup>
+      <FilterGroup title="Brand">
+        {searchBrands.map((item) => (
+          <CheckRow
+            key={item.id}
+            label={`${item.label} (${item.count})`}
+            checked={brands.includes(item.id)}
+            onChange={() => toggle(brands, item.id, setBrands)}
+          />
+        ))}
+      </FilterGroup>
+    </>
   );
 }
 
@@ -297,12 +383,12 @@ function CheckRow({
   onChange: () => void;
 }) {
   return (
-    <label className="flex cursor-pointer items-center gap-2 text-[13px] text-[#4b5060]">
+    <label className="flex min-h-11 cursor-pointer items-center gap-2 text-[13px] text-[#4b5060]">
       <input
         type="checkbox"
         checked={checked}
         onChange={onChange}
-        className="h-3.5 w-3.5 rounded border-[#c5c8ce] accent-cd-ink"
+        className="h-4 w-4 rounded border-[#c5c8ce] accent-cd-ink"
       />
       {label}
     </label>

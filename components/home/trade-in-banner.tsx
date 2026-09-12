@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 import { IconArrow } from "@/components/ui/icons";
 
@@ -34,29 +35,13 @@ export function TradeInBanner() {
             className="absolute right-10 top-8 z-10 hidden lg:block"
           />
 
-          <div className="pointer-events-none absolute inset-y-0 right-6 hidden items-end gap-0 lg:flex">
-            <Image
-              src="/images/phone-graphite-back.png"
-              alt=""
-              width={200}
-              height={260}
-              className="mb-6 h-[200px] w-auto -rotate-[16deg] object-contain"
-            />
-            <Image
-              src="/images/phone-blue-back.png"
-              alt="Pacific Blue iPhone"
-              width={220}
-              height={280}
-              className="mb-4 h-[230px] w-auto -rotate-[6deg] object-contain"
-            />
-            <Image
-              src="/images/hero-iphone-back.png"
-              alt="Desert Titanium iPhone"
-              width={160}
-              height={320}
-              className="mb-3 h-[250px] w-auto rotate-[10deg] object-contain"
-            />
-          </div>
+          <Image
+            src={officialPhotos.iphonesLineup}
+            alt="iPhone lineup"
+            width={640}
+            height={400}
+            className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] object-cover object-[center_60%] lg:block"
+          />
         </div>
       </div>
     </section>

@@ -40,10 +40,7 @@ export const tradeCategories: TradeCategory[] = [
     id: "other",
     title: "Other Devices",
     body: "Smartwatches, Monitors, and more.",
-    images: [
-      { src: "/images/powerbank.png", alt: "Power bank", className: "max-h-[36px]" },
-      { src: "/images/ssd-t7.png", alt: "SSD", className: "max-h-[48px]" },
-    ],
+    images: [{ src: "/images/accessories-hero.png", alt: "Other devices" }],
   },
 ];
 

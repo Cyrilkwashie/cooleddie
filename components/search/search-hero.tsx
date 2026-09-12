@@ -13,9 +13,9 @@ export function SearchHero({ query }: { query: string }) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[80%_center]"
+          className="object-cover object-[62%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f5f7] via-[#f4f5f7]/88 to-[#f4f5f7]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f5f7] via-[#f4f5f7]/72 to-transparent" />
 
         <div className="relative z-10 max-w-[420px]">
           <p className="text-[12px] font-medium text-[#8b909a]">Search Results</p>

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { photoClass } from "@/lib/assets";
 import { formatGhc, type ShopBadge, type ShopProduct } from "@/lib/shop";
 import { IconCart, IconHeart, IconStar } from "@/components/ui/icons";
 
@@ -19,11 +18,11 @@ export function ShopProductCard({ product }: { product: ShopProduct }) {
   const [saved, setSaved] = useState(false);
 
   return (
-    <article className="flex flex-col rounded-[18px] border border-[#ececee] bg-white p-3.5">
-      <div className="relative mb-3 flex h-[168px] items-center justify-center overflow-hidden">
+    <article className="flex flex-col overflow-hidden rounded-[18px] border border-[#ececee] bg-white">
+      <div className="relative aspect-[4/3] overflow-hidden bg-cd-soft">
         {product.badge ? (
           <span
-            className={`absolute left-0 top-0 z-10 rounded-full px-2.5 py-1 text-[11px] font-semibold ${badgeTone[product.badge]}`}
+            className={`absolute left-3 top-3 z-10 rounded-full px-2.5 py-1 text-[11px] font-semibold ${badgeTone[product.badge]}`}
           >
             {product.badge}
           </span>
@@ -32,56 +31,54 @@ export function ShopProductCard({ product }: { product: ShopProduct }) {
           type="button"
           aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
           onClick={() => setSaved((v) => !v)}
-          className={`absolute right-0 top-0 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full ${
+          className={`absolute right-2 top-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 ${
             saved ? "text-[#f43f5e]" : "text-[#9aa0a8] hover:text-cd-ink"
           }`}
         >
           <IconHeart size={18} />
         </button>
-        <Link href={product.href} className="flex h-full w-full items-center justify-center overflow-hidden rounded-[12px]">
+        <Link href={product.href} className="absolute inset-0">
           <Image
             src={product.image}
             alt={product.imageAlt}
-            width={220}
-            height={220}
-            className={photoClass(
-              product.image,
-              "h-full w-full object-cover",
-              "max-h-[148px] w-auto object-contain",
-            )}
+            fill
+            sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
           />
         </Link>
       </div>
-      <Link href={product.href} className="text-[14.5px] font-semibold tracking-tight text-cd-ink">
-        {product.name}
-      </Link>
-      <p className="mt-1 text-[12px] text-cd-subtle">{product.specs}</p>
-      <p className="mt-2 text-[16px] font-semibold text-cd-ink">
-        {product.compareAt ? (
-          <>
-            <span className="text-cd-red">{formatGhc(product.price)}</span>{" "}
-            <span className="text-[13px] font-normal text-[#9aa0a8] line-through">
-              {formatGhc(product.compareAt)}
-            </span>
-          </>
-        ) : (
-          formatGhc(product.price)
-        )}
-      </p>
-      <div className="mt-1.5 flex items-center gap-1 text-cd-star">
-        <IconStar size={13} />
-        <span className="text-[12px] font-medium text-cd-ink">
-          {product.rating.toFixed(1)}
-        </span>
-        <span className="text-[12px] text-cd-subtle">({product.reviews})</span>
+      <div className="flex flex-1 flex-col p-3.5">
+        <Link href={product.href} className="text-[14.5px] font-semibold tracking-tight text-cd-ink">
+          {product.name}
+        </Link>
+        <p className="mt-1 text-[12px] text-cd-subtle">{product.specs}</p>
+        <p className="mt-2 text-[16px] font-semibold text-cd-ink">
+          {product.compareAt ? (
+            <>
+              <span className="text-cd-red">{formatGhc(product.price)}</span>{" "}
+              <span className="text-[13px] font-normal text-[#9aa0a8] line-through">
+                {formatGhc(product.compareAt)}
+              </span>
+            </>
+          ) : (
+            formatGhc(product.price)
+          )}
+        </p>
+        <div className="mt-1.5 flex items-center gap-1 text-cd-star">
+          <IconStar size={13} />
+          <span className="text-[12px] font-medium text-cd-ink">
+            {product.rating.toFixed(1)}
+          </span>
+          <span className="text-[12px] text-cd-subtle">({product.reviews})</span>
+        </div>
+        <Link
+          href={product.cta === "Choose Options" ? product.href : "/cart"}
+          className="mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-cd-ink text-[13px] font-medium text-white hover:bg-black"
+        >
+          <IconCart size={15} />
+          {product.cta ?? "Add to Cart"}
+        </Link>
       </div>
-      <Link
-        href={product.cta === "Choose Options" ? product.href : "/cart"}
-        className="mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-cd-ink text-[13px] font-medium text-white hover:bg-black"
-      >
-        <IconCart size={15} />
-        {product.cta ?? "Add to Cart"}
-      </Link>
     </article>
   );
 }

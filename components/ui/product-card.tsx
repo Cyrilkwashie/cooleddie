@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { photoClass } from "@/lib/assets";
 import type { Product } from "@/lib/data";
 import { IconCart, IconStar } from "@/components/ui/icons";
 
@@ -16,7 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="group flex flex-col">
       <Link
         href={product.href}
-        className="relative mb-3 flex aspect-square items-center justify-center overflow-hidden rounded-[22px] bg-cd-soft"
+        className="relative mb-3 aspect-square overflow-hidden rounded-[22px] bg-cd-soft"
       >
         <span
           className={`absolute left-3 top-3 z-10 rounded-full px-2.5 py-1 text-[11px] font-semibold ${tagTone[product.tag.tone]}`}
@@ -26,13 +25,9 @@ export function ProductCard({ product }: { product: Product }) {
         <Image
           src={product.image}
           alt={product.imageAlt}
-          width={320}
-          height={320}
-          className={photoClass(
-            product.image,
-            "h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]",
-            "h-[72%] w-[72%] object-contain transition-transform duration-300 group-hover:scale-[1.04]",
-          )}
+          fill
+          sizes="(min-width: 1024px) 220px, 50vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
         />
       </Link>
       <Link href={product.href} className="text-[15px] font-semibold tracking-tight text-cd-ink">

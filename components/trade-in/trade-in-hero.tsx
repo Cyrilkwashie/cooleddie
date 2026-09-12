@@ -72,41 +72,21 @@ export function TradeInHero() {
             </p>
           </div>
 
-          <Image
-            src={officialPhotos.ipad}
-            alt="iPad Pro"
-            width={220}
-            height={124}
-            className="absolute left-[6%] top-[10%] h-[110px] w-[176px] -rotate-[10deg] rounded-[16px] object-cover shadow-md"
-          />
-          <Image
-            src={officialPhotos.macbooks}
-            alt="MacBook Pro"
-            width={280}
-            height={158}
-            className="absolute left-[26%] top-[6%] h-[128px] w-[210px] rotate-[6deg] rounded-[16px] object-cover shadow-md"
-          />
-          <Image
-            src={officialPhotos.ps5}
-            alt="PlayStation 5"
-            width={160}
-            height={196}
-            className="absolute right-[6%] top-[10%] h-[168px] w-[132px] rounded-[16px] object-cover shadow-md"
-          />
-          <Image
-            src={officialPhotos.iphones}
-            alt="iPhones"
-            width={240}
-            height={135}
-            className="absolute bottom-[8%] left-[14%] h-[128px] w-[210px] -rotate-[4deg] rounded-[16px] object-cover shadow-md"
-          />
-          <Image
-            src={officialPhotos.accessories}
-            alt="Apple accessories"
-            width={180}
-            height={101}
-            className="absolute bottom-[10%] right-[14%] h-[92px] w-[150px] rotate-[5deg] rounded-[16px] object-cover shadow-md"
-          />
+          <div className="absolute left-[6%] top-[10%] h-[110px] w-[176px] -rotate-[10deg] overflow-hidden rounded-[16px] shadow-md">
+            <Image src={officialPhotos.ipad} alt="iPad Pro" fill className="object-cover" sizes="176px" />
+          </div>
+          <div className="absolute left-[26%] top-[6%] h-[128px] w-[210px] rotate-[6deg] overflow-hidden rounded-[16px] shadow-md">
+            <Image src={officialPhotos.macbooks} alt="MacBook Pro" fill className="object-cover" sizes="210px" />
+          </div>
+          <div className="absolute right-[6%] top-[10%] h-[168px] w-[132px] overflow-hidden rounded-[16px] shadow-md">
+            <Image src={officialPhotos.ps5} alt="PlayStation 5" fill className="object-cover" sizes="132px" />
+          </div>
+          <div className="absolute bottom-[8%] left-[14%] h-[128px] w-[210px] -rotate-[4deg] overflow-hidden rounded-[16px] shadow-md">
+            <Image src={officialPhotos.iphones} alt="iPhones" fill className="object-cover" sizes="210px" />
+          </div>
+          <div className="absolute bottom-[10%] right-[14%] h-[92px] w-[150px] rotate-[5deg] overflow-hidden rounded-[16px] shadow-md">
+            <Image src={officialPhotos.accessories} alt="Apple accessories" fill className="object-cover" sizes="150px" />
+          </div>
         </div>
       </div>
     </section>

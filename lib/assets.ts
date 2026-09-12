@@ -14,6 +14,6 @@ export function isOfficialPhoto(src: string) {
   return officialSet.has(src);
 }
 
-export function photoClass(src: string, cover: string, contain: string) {
-  return isOfficialPhoto(src) ? cover : contain;
+export function photoClass(_src: string, cover: string, _contain?: string) {
+  return cover;
 }

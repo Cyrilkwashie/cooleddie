@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { isOfficialPhoto } from "@/lib/assets";
 import type { ProductDetail } from "@/lib/product";
 import { IconChevron, IconExpand, IconPlay } from "@/components/ui/icons";
 
@@ -31,17 +30,7 @@ export function ProductGallery({ product }: { product: ProductDetail }) {
                 selected ? "border-cd-blue" : "border-[#ececee] hover:border-[#d4d5d8]"
               }`}
             >
-              <Image
-                src={img.src}
-                alt=""
-                width={56}
-                height={56}
-                className={
-                  isOfficialPhoto(img.src)
-                    ? "h-full w-full object-cover"
-                    : "max-h-[46px] w-auto object-contain"
-                }
-              />
+              <Image src={img.src} alt="" fill className="object-cover" sizes="58px" />
               {img.kind === "video" ? (
                 <span className="absolute inset-0 flex items-center justify-center bg-black/25">
                   <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-cd-ink">
@@ -74,11 +63,7 @@ export function ProductGallery({ product }: { product: ProductDetail }) {
           fill
           priority
           sizes="(min-width: 1024px) 520px, 100vw"
-          className={
-            isOfficialPhoto(displaySrc)
-              ? "object-cover"
-              : "object-contain p-2 md:p-4"
-          }
+          className="object-cover"
         />
         <button
           type="button"

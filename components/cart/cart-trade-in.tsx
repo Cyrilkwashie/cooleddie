@@ -33,34 +33,18 @@ export function CartTradeIn() {
         />
 
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-end gap-3 lg:flex">
-          <Image
-            src={officialPhotos.iphones}
-            alt=""
-            width={180}
-            height={101}
-            className="mb-10 h-[100px] w-[164px] -rotate-[6deg] rounded-[14px] object-cover"
-          />
-          <Image
-            src={officialPhotos.accessories}
-            alt=""
-            width={140}
-            height={79}
-            className="mb-16 h-[78px] w-[128px] rounded-[14px] object-cover"
-          />
-          <Image
-            src={officialPhotos.macbooks}
-            alt=""
-            width={200}
-            height={112}
-            className="mb-12 h-[102px] w-[168px] rotate-[5deg] rounded-[14px] object-cover"
-          />
-          <Image
-            src={officialPhotos.ps5}
-            alt=""
-            width={140}
-            height={170}
-            className="mb-6 mr-4 h-[168px] w-[132px] rounded-[14px] object-cover"
-          />
+          <div className="relative mb-10 h-[100px] w-[164px] -rotate-[6deg] overflow-hidden rounded-[14px]">
+            <Image src={officialPhotos.iphones} alt="" fill className="object-cover" sizes="164px" />
+          </div>
+          <div className="relative mb-16 h-[78px] w-[128px] overflow-hidden rounded-[14px]">
+            <Image src={officialPhotos.accessories} alt="" fill className="object-cover" sizes="128px" />
+          </div>
+          <div className="relative mb-12 h-[102px] w-[168px] rotate-[5deg] overflow-hidden rounded-[14px]">
+            <Image src={officialPhotos.macbooks} alt="" fill className="object-cover" sizes="168px" />
+          </div>
+          <div className="relative mb-6 mr-4 h-[168px] w-[132px] overflow-hidden rounded-[14px]">
+            <Image src={officialPhotos.ps5} alt="" fill className="object-cover" sizes="132px" />
+          </div>
         </div>
       </div>
     </section>

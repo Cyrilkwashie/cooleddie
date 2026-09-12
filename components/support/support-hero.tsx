@@ -76,7 +76,7 @@ export function SupportHero() {
           </div>
         </div>
 
-        <div className="relative mx-auto min-h-[340px] w-full max-w-[560px] sm:min-h-[420px]">
+        <div className="relative mx-auto w-full max-w-[560px]">
           <HandwrittenNote
             lines={["Real Support.", "Real People."]}
             tone="ink"
@@ -84,14 +84,16 @@ export function SupportHero() {
             className="absolute left-0 top-2 z-20 hidden md:block lg:left-2"
           />
 
-          <Image
-            src="/images/support-agent.jpg"
-            alt="Cooleddie support specialist"
-            width={864}
-            height={1152}
-            priority
-            className="relative z-10 mx-auto h-[260px] w-auto max-w-full object-contain object-bottom sm:h-[420px] lg:h-[460px]"
-          />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[24px] bg-[#f4f5f7] sm:aspect-[5/6]">
+            <Image
+              src="/images/support-agent.jpg"
+              alt="Cooleddie support specialist"
+              fill
+              priority
+              sizes="(min-width: 1024px) 560px, 90vw"
+              className="object-cover object-[center_18%]"
+            />
+          </div>
 
           <div className="absolute right-0 top-[14%] z-20 hidden w-[230px] rounded-[18px] bg-white p-4 shadow-[0_16px_48px_rgba(15,18,22,0.10)] lg:block">
             <ul className="space-y-3.5">

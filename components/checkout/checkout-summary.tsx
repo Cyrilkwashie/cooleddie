@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { officialPhotos, photoClass } from "@/lib/assets";
+import { officialPhotos } from "@/lib/assets";
 import { initialCartLines } from "@/lib/cart";
 import { checkoutTotals } from "@/lib/checkout";
 import { formatGhc } from "@/lib/shop";
@@ -41,18 +41,14 @@ export function CheckoutSummary() {
             <li key={line.id} className="flex items-start gap-3 py-3.5 first:pt-0">
               <Link
                 href={line.href}
-                className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#f7f8fa]"
+                className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[10px] bg-[#f7f8fa]"
               >
                 <Image
                   src={line.image}
                   alt={line.imageAlt}
-                  width={56}
-                  height={56}
-                  className={photoClass(
-                    line.image,
-                    "h-full w-full object-cover",
-                    "max-h-12 w-auto object-contain",
-                  )}
+                  fill
+                  className="object-cover"
+                  sizes="56px"
                 />
               </Link>
               <div className="min-w-0 flex-1">
@@ -151,34 +147,18 @@ export function CheckoutSummary() {
           A Better You.
         </p>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-end gap-1.5 pr-2">
-          <Image
-            src={officialPhotos.iphones}
-            alt=""
-            width={90}
-            height={50}
-            className="mb-3 h-[52px] w-[84px] rounded-[8px] object-cover"
-          />
-          <Image
-            src={officialPhotos.accessories}
-            alt=""
-            width={70}
-            height={40}
-            className="mb-8 h-10 w-[64px] rounded-[8px] object-cover"
-          />
-          <Image
-            src={officialPhotos.macbooks}
-            alt=""
-            width={90}
-            height={50}
-            className="mb-6 h-[46px] w-[74px] rounded-[8px] object-cover"
-          />
-          <Image
-            src={officialPhotos.ps5}
-            alt=""
-            width={56}
-            height={70}
-            className="mb-2 h-[72px] w-[56px] rounded-[8px] object-cover"
-          />
+          <div className="relative mb-3 h-[52px] w-[84px] overflow-hidden rounded-[8px]">
+            <Image src={officialPhotos.iphones} alt="" fill className="object-cover" sizes="84px" />
+          </div>
+          <div className="relative mb-8 h-10 w-[64px] overflow-hidden rounded-[8px]">
+            <Image src={officialPhotos.accessories} alt="" fill className="object-cover" sizes="64px" />
+          </div>
+          <div className="relative mb-6 h-[46px] w-[74px] overflow-hidden rounded-[8px]">
+            <Image src={officialPhotos.macbooks} alt="" fill className="object-cover" sizes="74px" />
+          </div>
+          <div className="relative mb-2 h-[72px] w-[56px] overflow-hidden rounded-[8px]">
+            <Image src={officialPhotos.ps5} alt="" fill className="object-cover" sizes="56px" />
+          </div>
         </div>
       </div>
 

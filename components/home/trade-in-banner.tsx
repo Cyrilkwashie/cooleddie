@@ -9,6 +9,14 @@ export function TradeInBanner() {
     <section className="bg-white py-8 md:py-10">
       <div className="container-cd">
         <div className="relative overflow-hidden rounded-[28px] bg-[#0c0e10] px-8 py-10 text-white md:px-12 md:py-14">
+          <Image
+            src={officialPhotos.iphonesLineup}
+            alt="iPhone lineup"
+            fill
+            sizes="100vw"
+            className="object-cover object-[center_55%] lg:object-[80%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e10] via-[#0c0e10]/78 to-[#0c0e10]/45 lg:bg-gradient-to-r lg:from-[#0c0e10] lg:via-[#0c0e10]/82 lg:to-[#0c0e10]/20" />
           <div className="relative z-10 max-w-[420px]">
             <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#c5c6c9]">
               Sell or Trade-in
@@ -33,14 +41,6 @@ export function TradeInBanner() {
             arrow="left"
             align="right"
             className="absolute right-10 top-8 z-10 hidden lg:block"
-          />
-
-          <Image
-            src={officialPhotos.iphonesLineup}
-            alt="iPhone lineup"
-            width={640}
-            height={400}
-            className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] object-cover object-[center_60%] lg:block"
           />
         </div>
       </div>

@@ -60,34 +60,18 @@ export function Newsletter() {
           />
 
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] md:block">
-            <Image
-              src={officialPhotos.accessories}
-              alt=""
-              width={220}
-              height={124}
-              className="absolute bottom-8 left-[6%] h-[92px] w-[150px] -rotate-[8deg] rounded-[14px] object-cover shadow-md"
-            />
-            <Image
-              src={officialPhotos.iphonesLineup}
-              alt=""
-              width={260}
-              height={146}
-              className="absolute left-[26%] top-1/2 h-[120px] w-[190px] -translate-y-1/2 rotate-[8deg] rounded-[16px] object-cover shadow-md"
-            />
-            <Image
-              src={officialPhotos.macbooks}
-              alt=""
-              width={240}
-              height={135}
-              className="absolute bottom-6 right-6 h-[110px] w-[176px] rotate-[6deg] rounded-[16px] object-cover shadow-md"
-            />
-            <Image
-              src={officialPhotos.ps5}
-              alt=""
-              width={180}
-              height={220}
-              className="absolute right-6 top-6 h-[128px] w-[104px] rounded-[16px] object-cover shadow-md"
-            />
+            <div className="absolute bottom-8 left-[6%] h-[92px] w-[150px] -rotate-[8deg] overflow-hidden rounded-[14px] shadow-md">
+              <Image src={officialPhotos.accessories} alt="" fill className="object-cover" sizes="150px" />
+            </div>
+            <div className="absolute left-[26%] top-1/2 h-[120px] w-[190px] -translate-y-1/2 rotate-[8deg] overflow-hidden rounded-[16px] shadow-md">
+              <Image src={officialPhotos.iphonesLineup} alt="" fill className="object-cover" sizes="190px" />
+            </div>
+            <div className="absolute bottom-6 right-6 h-[110px] w-[176px] rotate-[6deg] overflow-hidden rounded-[16px] shadow-md">
+              <Image src={officialPhotos.macbooks} alt="" fill className="object-cover" sizes="176px" />
+            </div>
+            <div className="absolute right-6 top-6 h-[128px] w-[104px] overflow-hidden rounded-[16px] shadow-md">
+              <Image src={officialPhotos.ps5} alt="" fill className="object-cover" sizes="104px" />
+            </div>
           </div>
         </div>
       </div>

@@ -96,9 +96,11 @@ export function Header() {
               const active =
                 link.href === "/shop"
                   ? shopActive
-                  : link.href === "/"
-                    ? pathname === "/"
-                    : pathname === link.href;
+                  : link.href === "/trade-in"
+                    ? pathname.startsWith("/trade-in") || pathname.startsWith("/sell")
+                    : link.href === "/"
+                      ? pathname === "/"
+                      : pathname === link.href || pathname.startsWith(`${link.href}/`);
               return (
                 <Link
                   key={link.label}

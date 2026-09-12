@@ -5,7 +5,12 @@ import { usePathname } from "next/navigation";
 import { GhanaFlag, IconHeadset, IconPin, IconTruck } from "@/components/ui/icons";
 
 export function TopBar() {
-  const isHome = usePathname() === "/";
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const showLocale =
+    pathname.startsWith("/trade-in") ||
+    pathname.startsWith("/sell") ||
+    pathname.startsWith("/support");
 
   if (isHome) {
     return (
@@ -58,6 +63,16 @@ export function TopBar() {
           <Link href="/support" className="hover:text-white">
             Help & Support
           </Link>
+          {showLocale ? (
+            <button
+              type="button"
+              className="hidden items-center gap-1.5 hover:text-white sm:inline-flex"
+            >
+              <GhanaFlag className="h-3 w-[18px] rounded-[2px]" />
+              <span>GHC</span>
+              <span className="text-[9px]">▾</span>
+            </button>
+          ) : null}
         </div>
       </div>
     </div>

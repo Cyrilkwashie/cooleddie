@@ -151,6 +151,52 @@ export function IconLock(props: IconProps) {
   );
 }
 
+export function IconPlayCircle(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="m10.5 8.8 6 3.2-6 3.2V8.8Z" fill="currentColor" stroke="none" />
+    </Svg>
+  );
+}
+
+export function IconZap(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M13 3 5.5 13.2H12l-1 7.8L18.5 10.8H12L13 3Z" />
+    </Svg>
+  );
+}
+
+export function IconLeaf(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M5 19c8-1 13-7 14-15-8 1-14 7-14 15Z" />
+      <path d="M5 19c4-5 8-8 14-10" />
+    </Svg>
+  );
+}
+
+export function IconClipboard(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="6" y="5" width="12" height="15" rx="2" />
+      <path d="M9 5.2V4h6v1.2" />
+      <path d="M9 10h6M9 13h6M9 16h4" />
+    </Svg>
+  );
+}
+
+export function IconCash(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="3.5" y="7" width="17" height="10" rx="2" />
+      <circle cx="12" cy="12" r="2.2" />
+      <path d="M6 9.2h.01M18 14.8h.01" />
+    </Svg>
+  );
+}
+
 export function IconBadge(props: IconProps) {
   return (
     <Svg {...props}>

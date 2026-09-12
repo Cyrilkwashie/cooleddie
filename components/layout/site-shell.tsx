@@ -15,7 +15,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <Header />
       {isHome ? <CategoryNav /> : null}
       <main className="flex-1">{children}</main>
-      <Footer />
+      <Footer variant={isHome ? "home" : "storefront"} />
     </div>
   );
 }

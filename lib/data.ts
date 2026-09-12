@@ -184,6 +184,37 @@ export const footerColumns = [
   },
 ];
 
+export const storefrontFooterColumns = [
+  {
+    title: "Shop",
+    links: [
+      { href: "/shop", label: "All Products" },
+      { href: "/shop/iphones", label: "iPhones" },
+      { href: "/shop/macbooks", label: "MacBooks" },
+      { href: "/shop/gaming", label: "Gaming Consoles" },
+      { href: "/shop/accessories", label: "Accessories" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { href: "/support", label: "Help Center" },
+      { href: "/track-order", label: "Track Order" },
+      { href: "/support", label: "Contact Us" },
+      { href: "/faq", label: "FAQ" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About Us" },
+      { href: "/trade-in", label: "Sell/Trade-in" },
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Service" },
+    ],
+  },
+];
+
 export const placeholderPages: Record<
   string,
   { title: string; description: string }

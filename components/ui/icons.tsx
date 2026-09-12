@@ -345,6 +345,91 @@ export function SocialFacebook(props: IconProps) {
   );
 }
 
+export function IconChip(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="7" y="7" width="10" height="10" rx="1.6" />
+      <path d="M9 4.5v2.5M12 4.5v2.5M15 4.5v2.5M9 17v2.5M12 17v2.5M15 17v2.5M4.5 9H7M4.5 12H7M4.5 15H7M17 9h2.5M17 12h2.5M17 15h2.5" />
+    </Svg>
+  );
+}
+
+export function IconCamera(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M4.5 8.2h3l1.4-2.2h6.2L16.5 8.2H19.5A1.5 1.5 0 0 1 21 9.7v8.1A1.5 1.5 0 0 1 19.5 19.3H4.5A1.5 1.5 0 0 1 3 17.8V9.7A1.5 1.5 0 0 1 4.5 8.2Z" />
+      <circle cx="12" cy="13.4" r="3.1" />
+    </Svg>
+  );
+}
+
+export function IconBattery(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="3.5" y="7.5" width="15" height="9" rx="2" />
+      <path d="M18.5 10.2h1.6A.9.9 0 0 1 21 11.1v1.8a.9.9 0 0 1-.9.9h-1.6" />
+      <path d="M6.2 10v4M9 10v4M11.8 10v4" />
+    </Svg>
+  );
+}
+
+export function IconExpand(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M9 4H4v5M15 4h5v5M4 15v5h5M20 15v5h-5" />
+    </Svg>
+  );
+}
+
+export function IconPlay(props: IconProps) {
+  return (
+    <Svg {...props} fill="currentColor" stroke="none">
+      <path d="M9 7.2v9.6L17 12 9 7.2Z" />
+    </Svg>
+  );
+}
+
+export function IconCheckCircle(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <circle cx="12" cy="12" r="8" />
+      <path d="m8.6 12.1 2.2 2.2 4.6-4.6" />
+    </Svg>
+  );
+}
+
+export function IconMinus(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M5 12h14" />
+    </Svg>
+  );
+}
+
+export function IconPlus(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M12 5v14M5 12h14" />
+    </Svg>
+  );
+}
+
+export function IconChevronLeft(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="m15 6-6 6 6 6" />
+    </Svg>
+  );
+}
+
+export function IconChevronRight(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="m9 6 6 6-6 6" />
+    </Svg>
+  );
+}
+
 export function SocialYouTube(props: IconProps) {
   return (
     <Svg {...props}>

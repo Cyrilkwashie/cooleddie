@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { headerBadges, isShopNavActive } from "@/lib/chrome";
 import { shopNav } from "@/lib/shop";
 import {
   IconClose,
@@ -75,7 +76,8 @@ export function Header() {
     setOpen(false);
   }
 
-  const shopActive = pathname === "/shop" || pathname.startsWith("/shop/");
+  const shopActive = isShopNavActive(pathname);
+  const badges = headerBadges(pathname);
 
   if (!isHome) {
     return (
@@ -136,7 +138,7 @@ export function Header() {
             >
               <IconSearch size={22} />
             </button>
-            <IconBadges wishlist={0} cart={0} />
+            <IconBadges wishlist={badges.wishlist} cart={badges.cart} />
             <button
               type="button"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full lg:hidden"

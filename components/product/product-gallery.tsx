@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { isOfficialPhoto } from "@/lib/assets";
 import type { ProductDetail } from "@/lib/product";
 import { IconChevron, IconExpand, IconPlay } from "@/components/ui/icons";
 
@@ -35,7 +36,11 @@ export function ProductGallery({ product }: { product: ProductDetail }) {
                 alt=""
                 width={56}
                 height={56}
-                className="max-h-[46px] w-auto object-contain"
+                className={
+                  isOfficialPhoto(img.src)
+                    ? "h-full w-full object-cover"
+                    : "max-h-[46px] w-auto object-contain"
+                }
               />
               {img.kind === "video" ? (
                 <span className="absolute inset-0 flex items-center justify-center bg-black/25">
@@ -69,7 +74,11 @@ export function ProductGallery({ product }: { product: ProductDetail }) {
           fill
           priority
           sizes="(min-width: 1024px) 520px, 90vw"
-          className="object-contain p-2 md:p-4"
+          className={
+            isOfficialPhoto(displaySrc)
+              ? "object-cover"
+              : "object-contain p-2 md:p-4"
+          }
         />
         <button
           type="button"

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 import { IconArrow, IconBadge, IconLock, IconShield, IconTruck } from "@/components/ui/icons";
 
@@ -53,28 +54,20 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative mx-auto flex min-h-[360px] w-full max-w-[520px] items-end justify-center pb-2 sm:min-h-[420px]">
+        <div className="relative mx-auto min-h-[320px] w-full max-w-[560px] overflow-hidden rounded-[22px] sm:min-h-[400px] lg:min-h-[440px]">
           <HandwrittenNote
             lines={["More than a Phone.", "A Lifestyle."]}
-            className="absolute right-0 top-0 z-20 hidden sm:block"
+            className="absolute right-4 top-4 z-20 hidden sm:block"
             align="right"
             arrow="down-left"
           />
           <Image
-            src="/images/hero-iphone-back.png"
-            alt="iPhone 16 Pro Desert Titanium back"
-            width={180}
-            height={620}
-            className="relative z-10 -mr-8 h-[320px] w-auto drop-shadow-[0_28px_40px_rgba(0,0,0,0.45)] sm:h-[360px] lg:h-[400px]"
+            src={officialPhotos.iphones}
+            alt="The latest iPhones"
+            fill
             priority
-          />
-          <Image
-            src="/images/hero-iphone-front.png"
-            alt="iPhone 16 Pro Desert Titanium front"
-            width={220}
-            height={620}
-            className="relative z-20 h-[340px] w-auto drop-shadow-[0_28px_50px_rgba(0,0,0,0.5)] sm:h-[380px] lg:h-[420px]"
-            priority
+            sizes="(min-width: 1024px) 560px, 90vw"
+            className="object-cover object-[center_42%]"
           />
         </div>
       </div>

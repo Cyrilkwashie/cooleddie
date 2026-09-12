@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { officialPhotos, photoClass } from "@/lib/assets";
 import { initialCartLines } from "@/lib/cart";
 import { checkoutTotals } from "@/lib/checkout";
 import { formatGhc } from "@/lib/shop";
@@ -47,7 +48,11 @@ export function CheckoutSummary() {
                   alt={line.imageAlt}
                   width={56}
                   height={56}
-                  className="max-h-12 w-auto object-contain"
+                  className={photoClass(
+                    line.image,
+                    "h-full w-full object-cover",
+                    "max-h-12 w-auto object-contain",
+                  )}
                 />
               </Link>
               <div className="min-w-0 flex-1">
@@ -145,34 +150,34 @@ export function CheckoutSummary() {
           <br />
           A Better You.
         </p>
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-end">
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-end gap-1.5 pr-2">
           <Image
-            src="/images/iphone16pm-front.png"
+            src={officialPhotos.iphones}
             alt=""
-            width={70}
-            height={140}
-            className="mb-3 h-[110px] w-auto object-contain"
+            width={90}
+            height={50}
+            className="mb-3 h-[52px] w-[84px] rounded-[8px] object-cover"
           />
           <Image
-            src="/images/airpods-pro.png"
+            src={officialPhotos.accessories}
+            alt=""
+            width={70}
+            height={40}
+            className="mb-8 h-10 w-[64px] rounded-[8px] object-cover"
+          />
+          <Image
+            src={officialPhotos.macbooks}
+            alt=""
+            width={90}
+            height={50}
+            className="mb-6 h-[46px] w-[74px] rounded-[8px] object-cover"
+          />
+          <Image
+            src={officialPhotos.ps5}
             alt=""
             width={56}
-            height={56}
-            className="mb-8 h-11 w-auto object-contain"
-          />
-          <Image
-            src="/images/mba-open.png"
-            alt=""
-            width={120}
-            height={80}
-            className="mb-6 h-[58px] w-auto object-contain"
-          />
-          <Image
-            src="/images/ps5-bw.png"
-            alt=""
-            width={70}
-            height={100}
-            className="mb-2 mr-2 h-[96px] w-auto object-contain"
+            height={70}
+            className="mb-2 h-[72px] w-[56px] rounded-[8px] object-cover"
           />
         </div>
       </div>

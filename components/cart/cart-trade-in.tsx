@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 import { IconArrow } from "@/components/ui/icons";
 
@@ -31,34 +32,34 @@ export function CartTradeIn() {
           className="absolute right-6 top-8 z-20 hidden lg:block"
         />
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-end lg:flex">
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-end gap-3 lg:flex">
           <Image
-            src="/images/iphone16pm-front.png"
-            alt=""
-            width={160}
-            height={320}
-            className="mb-8 mr-[-8px] h-[210px] w-auto object-contain"
-          />
-          <Image
-            src="/images/airpods-pro.png"
-            alt=""
-            width={140}
-            height={140}
-            className="mb-16 mr-2 h-[92px] w-auto object-contain"
-          />
-          <Image
-            src="/images/mba-open.png"
-            alt=""
-            width={260}
-            height={170}
-            className="mb-14 h-[120px] w-auto object-contain"
-          />
-          <Image
-            src="/images/ps5-bw.png"
+            src={officialPhotos.iphones}
             alt=""
             width={180}
-            height={240}
-            className="mb-6 mr-4 h-[200px] w-auto object-contain"
+            height={101}
+            className="mb-10 h-[100px] w-[164px] -rotate-[6deg] rounded-[14px] object-cover"
+          />
+          <Image
+            src={officialPhotos.accessories}
+            alt=""
+            width={140}
+            height={79}
+            className="mb-16 h-[78px] w-[128px] rounded-[14px] object-cover"
+          />
+          <Image
+            src={officialPhotos.macbooks}
+            alt=""
+            width={200}
+            height={112}
+            className="mb-12 h-[102px] w-[168px] rotate-[5deg] rounded-[14px] object-cover"
+          />
+          <Image
+            src={officialPhotos.ps5}
+            alt=""
+            width={140}
+            height={170}
+            className="mb-6 mr-4 h-[168px] w-[132px] rounded-[14px] object-cover"
           />
         </div>
       </div>

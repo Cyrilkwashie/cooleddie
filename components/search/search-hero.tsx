@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { officialPhotos } from "@/lib/assets";
 
 export function SearchHero({ query }: { query: string }) {
   const term = query.trim() || "iPhone";
@@ -6,6 +7,16 @@ export function SearchHero({ query }: { query: string }) {
   return (
     <section className="container-cd pt-5 md:pt-6">
       <div className="relative overflow-hidden rounded-[24px] bg-[#f4f5f7] px-6 py-8 md:px-10 md:py-10">
+        <Image
+          src={officialPhotos.iphones}
+          alt="iPhone 16 Pro"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[80%_center]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f5f7] via-[#f4f5f7]/88 to-[#f4f5f7]/20" />
+
         <div className="relative z-10 max-w-[420px]">
           <p className="text-[12px] font-medium text-[#8b909a]">Search Results</p>
           <h1 className="mt-2 font-display text-[32px] font-semibold leading-[1.1] tracking-[-0.035em] text-cd-ink md:text-[40px]">
@@ -16,18 +27,7 @@ export function SearchHero({ query }: { query: string }) {
           </p>
         </div>
 
-        <div className="pointer-events-none absolute inset-y-0 right-[18%] hidden items-center lg:flex">
-          <Image
-            src="/images/apple-iphone16pm.jpg"
-            alt="iPhone 16 Pro Max"
-            width={520}
-            height={360}
-            priority
-            className="h-[220px] w-auto object-contain object-center"
-          />
-        </div>
-
-        <div className="absolute right-8 top-1/2 hidden -translate-y-1/2 lg:block">
+        <div className="absolute right-8 top-1/2 z-10 hidden -translate-y-1/2 rounded-[16px] bg-white/90 px-4 py-3 backdrop-blur-sm lg:block">
           <p className="font-display text-[22px] font-semibold tracking-[-0.03em] text-cd-ink">
             iPhone
           </p>

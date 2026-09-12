@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { photoClass } from "@/lib/assets";
 import {
   FREE_DELIVERY_THRESHOLD,
   cartRelated,
@@ -117,7 +118,11 @@ export function CartView() {
                           alt={line.imageAlt}
                           width={72}
                           height={72}
-                          className="max-h-[58px] w-auto object-contain"
+                          className={photoClass(
+                            line.image,
+                            "h-full w-full object-cover",
+                            "max-h-[58px] w-auto object-contain",
+                          )}
                         />
                       </Link>
                       <div className="min-w-0">

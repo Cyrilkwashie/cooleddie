@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { photoClass } from "@/lib/assets";
 import { formatGhc, type ShopBadge, type ShopProduct } from "@/lib/shop";
 import { IconCart, IconHeart, IconStar } from "@/components/ui/icons";
 
@@ -37,13 +38,17 @@ export function ShopProductCard({ product }: { product: ShopProduct }) {
         >
           <IconHeart size={18} />
         </button>
-        <Link href={product.href} className="flex h-full w-full items-center justify-center px-4">
+        <Link href={product.href} className="flex h-full w-full items-center justify-center overflow-hidden rounded-[12px]">
           <Image
             src={product.image}
             alt={product.imageAlt}
             width={220}
             height={220}
-            className="max-h-[148px] w-auto object-contain"
+            className={photoClass(
+              product.image,
+              "h-full w-full object-cover",
+              "max-h-[148px] w-auto object-contain",
+            )}
           />
         </Link>
       </div>

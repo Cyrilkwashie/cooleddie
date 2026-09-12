@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { photoClass } from "@/lib/assets";
 import type { RelatedProduct } from "@/lib/product";
 import { formatGhc } from "@/lib/shop";
 import { IconChevronLeft, IconChevronRight, IconStar } from "@/components/ui/icons";
@@ -56,14 +57,18 @@ export function RelatedProducts({ products }: { products: RelatedProduct[] }) {
             >
               <Link
                 href={product.href}
-                className="mb-3 flex h-[168px] items-center justify-center"
+                className="mb-3 flex h-[168px] items-center justify-center overflow-hidden rounded-[14px]"
               >
                 <Image
                   src={product.image}
                   alt={product.imageAlt}
                   width={200}
                   height={200}
-                  className="max-h-[148px] w-auto object-contain"
+                  className={photoClass(
+                    product.image,
+                    "h-full w-full object-cover",
+                    "max-h-[148px] w-auto object-contain",
+                  )}
                 />
               </Link>
               <Link href={product.href} className="block text-[14px] font-medium text-cd-ink">

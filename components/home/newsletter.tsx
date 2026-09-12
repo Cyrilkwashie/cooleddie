@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 
 export function Newsletter() {
@@ -54,37 +55,38 @@ export function Newsletter() {
             lines={["Better Tech", "Days Ahead."]}
             arrow="down"
             align="right"
-            className="absolute right-[28%] top-8 z-10 hidden text-[#7d7d7d] md:block [&_.hand-note]:text-[#6f6f6f]"
+            tone="ink"
+            className="absolute right-[28%] top-8 z-10 hidden md:block"
           />
 
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] md:block">
             <Image
-              src="/images/png-airpods2.png"
+              src={officialPhotos.accessories}
               alt=""
-              width={140}
-              height={180}
-              className="absolute bottom-8 left-[8%] h-[120px] w-auto object-contain"
+              width={220}
+              height={124}
+              className="absolute bottom-8 left-[6%] h-[92px] w-[150px] -rotate-[8deg] rounded-[14px] object-cover shadow-md"
             />
             <Image
-              src="/images/png-iphone12-black.png"
+              src={officialPhotos.iphones}
               alt=""
-              width={200}
-              height={240}
-              className="absolute left-[28%] top-1/2 h-[160px] w-auto -translate-y-1/2 rotate-[18deg] object-contain"
+              width={260}
+              height={146}
+              className="absolute left-[26%] top-1/2 h-[120px] w-[190px] -translate-y-1/2 rotate-[8deg] rounded-[16px] object-cover shadow-md"
             />
             <Image
-              src="/images/cutout-macbook.png"
+              src={officialPhotos.macbooks}
               alt=""
               width={240}
-              height={180}
-              className="absolute bottom-6 right-6 h-[150px] w-auto rotate-[12deg] object-contain"
+              height={135}
+              className="absolute bottom-6 right-6 h-[110px] w-[176px] rotate-[6deg] rounded-[16px] object-cover shadow-md"
             />
             <Image
-              src="/images/ps5-bw.png"
+              src={officialPhotos.ps5}
               alt=""
               width={180}
-              height={180}
-              className="absolute right-6 top-6 h-[150px] w-auto object-contain object-right-top"
+              height={220}
+              className="absolute right-6 top-6 h-[128px] w-[104px] rounded-[16px] object-cover shadow-md"
             />
           </div>
         </div>

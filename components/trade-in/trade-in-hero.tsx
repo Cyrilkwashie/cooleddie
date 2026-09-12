@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 import { IconArrow, IconLock, IconPlayCircle, IconTruck, IconZap } from "@/components/ui/icons";
 
@@ -72,46 +73,39 @@ export function TradeInHero() {
           </div>
 
           <Image
-            src="/images/ipad-back.png"
-            alt=""
-            width={160}
-            height={200}
-            className="absolute left-[8%] top-[8%] h-[130px] w-auto -rotate-[18deg] object-contain"
+            src={officialPhotos.ipad}
+            alt="iPad Pro"
+            width={220}
+            height={124}
+            className="absolute left-[6%] top-[10%] h-[110px] w-[176px] -rotate-[10deg] rounded-[16px] object-cover shadow-md"
           />
           <Image
-            src="/images/mba-open.png"
-            alt=""
+            src={officialPhotos.macbooks}
+            alt="MacBook Pro"
             width={280}
-            height={180}
-            className="absolute left-[28%] top-[6%] h-[140px] w-auto rotate-[8deg] object-contain"
+            height={158}
+            className="absolute left-[26%] top-[6%] h-[128px] w-[210px] rotate-[6deg] rounded-[16px] object-cover shadow-md"
           />
           <Image
-            src="/images/ps5-bw.png"
-            alt=""
-            width={150}
-            height={200}
-            className="absolute right-[8%] top-[10%] h-[168px] w-auto object-contain"
+            src={officialPhotos.ps5}
+            alt="PlayStation 5"
+            width={160}
+            height={196}
+            className="absolute right-[6%] top-[10%] h-[168px] w-[132px] rounded-[16px] object-cover shadow-md"
           />
           <Image
-            src="/images/iphone16pm-front.png"
-            alt=""
-            width={130}
-            height={260}
-            className="absolute bottom-[6%] left-[18%] h-[200px] w-auto object-contain"
+            src={officialPhotos.iphones}
+            alt="iPhones"
+            width={240}
+            height={135}
+            className="absolute bottom-[8%] left-[14%] h-[128px] w-[210px] -rotate-[4deg] rounded-[16px] object-cover shadow-md"
           />
           <Image
-            src="/images/airpods-pro.png"
-            alt=""
-            width={110}
-            height={110}
-            className="absolute bottom-[18%] left-[42%] h-[78px] w-auto object-contain"
-          />
-          <Image
-            src="/images/png-watch.png"
-            alt=""
-            width={90}
-            height={110}
-            className="absolute bottom-[8%] right-[18%] h-[92px] w-auto object-contain"
+            src={officialPhotos.accessories}
+            alt="Apple accessories"
+            width={180}
+            height={101}
+            className="absolute bottom-[10%] right-[14%] h-[92px] w-[150px] rotate-[5deg] rounded-[16px] object-cover shadow-md"
           />
         </div>
       </div>

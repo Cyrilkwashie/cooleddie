@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 import { IconBadge, IconShield, IconTag, IconTruck } from "@/components/ui/icons";
 
@@ -37,7 +38,7 @@ export function ShopHero() {
             </ul>
           </div>
 
-          <div className="relative hidden min-h-[260px] lg:block">
+          <div className="relative hidden min-h-[270px] lg:block">
             <HandwrittenNote
               lines={["More Than Devices.", "A Better You."]}
               className="absolute right-0 top-0 z-20"
@@ -45,53 +46,25 @@ export function ShopHero() {
               arrow="down-left"
             />
             <Image
-              src="/images/ipad-back.png"
-              alt=""
-              width={160}
-              height={200}
-              className="absolute left-[2%] top-[28%] h-[120px] w-auto -rotate-[18deg] object-contain"
+              src={officialPhotos.iphonesLineup}
+              alt="iPhone color lineup"
+              width={420}
+              height={236}
+              className="absolute left-[2%] top-[22%] h-[158px] w-[250px] -rotate-[8deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
             />
             <Image
-              src="/images/iphone16pm-back.png"
-              alt=""
-              width={140}
-              height={280}
-              className="absolute left-[18%] bottom-[4%] h-[200px] w-auto object-contain"
+              src={officialPhotos.macbooks}
+              alt="MacBook Pro"
+              width={420}
+              height={236}
+              className="absolute left-[28%] top-[6%] h-[148px] w-[240px] rotate-[6deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
             />
             <Image
-              src="/images/cutout-macbook.png"
-              alt=""
-              width={240}
-              height={160}
-              className="absolute left-[32%] top-[18%] h-[130px] w-auto rotate-[8deg] object-contain"
-            />
-            <Image
-              src="/images/ps5-bw.png"
-              alt=""
-              width={160}
-              height={220}
-              className="absolute right-[22%] top-2 h-[170px] w-auto object-contain"
-            />
-            <Image
-              src="/images/cutout-airpods.png"
-              alt=""
-              width={100}
-              height={100}
-              className="absolute bottom-6 right-[28%] h-[72px] w-auto object-contain"
-            />
-            <Image
-              src="/images/dualsense.png"
-              alt=""
-              width={160}
-              height={120}
-              className="absolute bottom-4 right-[8%] h-[90px] w-auto object-contain"
-            />
-            <Image
-              src="/images/png-watch.png"
-              alt=""
-              width={90}
-              height={110}
-              className="absolute bottom-6 right-0 h-[88px] w-auto object-contain"
+              src={officialPhotos.ps5}
+              alt="PlayStation 5"
+              width={280}
+              height={340}
+              className="absolute bottom-0 right-[6%] h-[196px] w-[158px] rotate-[3deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
             />
           </div>
         </div>

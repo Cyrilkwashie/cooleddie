@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { officialPhotos } from "@/lib/assets";
 import { HandwrittenNote } from "@/components/ui/handwritten-note";
 import { IconArrow } from "@/components/ui/icons";
 
@@ -30,34 +31,34 @@ export function TradeInCta() {
           className="absolute right-6 top-10 z-20 hidden lg:block"
         />
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-end lg:flex">
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-end gap-3 lg:flex">
           <Image
-            src="/images/iphone16pm-front.png"
+            src={officialPhotos.iphones}
+            alt=""
+            width={180}
+            height={101}
+            className="mb-10 h-[92px] w-[150px] -rotate-[8deg] rounded-[14px] object-cover"
+          />
+          <Image
+            src={officialPhotos.accessories}
             alt=""
             width={150}
-            height={300}
-            className="mb-8 h-[200px] w-auto object-contain"
+            height={84}
+            className="mb-16 h-[78px] w-[128px] rounded-[14px] object-cover"
           />
           <Image
-            src="/images/airpods-pro.png"
+            src={officialPhotos.macbooks}
             alt=""
-            width={120}
-            height={120}
-            className="mb-16 h-[84px] w-auto object-contain"
+            width={200}
+            height={112}
+            className="mb-12 h-[96px] w-[160px] rotate-[6deg] rounded-[14px] object-cover"
           />
           <Image
-            src="/images/mba-open.png"
+            src={officialPhotos.ps5}
             alt=""
-            width={240}
-            height={160}
-            className="mb-14 h-[110px] w-auto object-contain"
-          />
-          <Image
-            src="/images/ps5-bw.png"
-            alt=""
-            width={160}
-            height={220}
-            className="mb-6 mr-4 h-[190px] w-auto object-contain"
+            width={140}
+            height={170}
+            className="mb-6 mr-4 h-[150px] w-[118px] rounded-[14px] object-cover"
           />
         </div>
       </div>

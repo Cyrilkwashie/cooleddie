@@ -311,6 +311,25 @@ export function IconCard(props: IconProps) {
   );
 }
 
+export function IconBank(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path d="M4 9.5 12 5l8 4.5" />
+      <path d="M6 10v6M10 10v6M14 10v6M18 10v6" />
+      <path d="M4 16.5h16M3.5 19h17" />
+    </Svg>
+  );
+}
+
+export function IconMobile(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="7.5" y="3" width="9" height="18" rx="2" />
+      <path d="M11 17.5h2" />
+    </Svg>
+  );
+}
+
 export function GhanaFlag({ className }: { className?: string }) {
   return (
     <svg

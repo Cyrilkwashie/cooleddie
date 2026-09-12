@@ -49,6 +49,17 @@ export function PayTelecel({ className }: { className?: string }) {
   );
 }
 
+export function PayAmex({ className }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex h-7 min-w-[40px] items-center justify-center rounded-[6px] bg-[#2e77bc] px-1.5 text-[8px] font-extrabold tracking-wide text-white ${className ?? ""}`}
+      aria-label="American Express"
+    >
+      AMEX
+    </span>
+  );
+}
+
 export function PayApple({ className }: { className?: string }) {
   return (
     <span
